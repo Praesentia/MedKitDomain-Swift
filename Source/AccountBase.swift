@@ -34,7 +34,7 @@ public class AccountBase: Account, AccountBackend {
     public let credentials : Credentials;
     public var description : String?;
     public let identity    : Identity;
-    public var principal   : Principal { return Principal(identity: identity, credentials: credentials, authorization: NullAuthorization.instance); }
+    public var principal   : Principal { return Principal(identity: identity, credentials: credentials, authorization: NullAuthorization.shared); }
     
     // backend
     public var backend : AccountBackendDelegate!;
@@ -104,7 +104,7 @@ public class AccountBase: Account, AccountBackend {
         
         profile[KeyDescription] = description;
         profile[KeyIdentity]    = identity.profile;
-        profile[KeyCredentials] = credentials.profilePublic;
+        profile[KeyCredentials] = credentials.profile;
         
         return profile;
     }
