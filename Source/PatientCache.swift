@@ -62,7 +62,7 @@ public class PatientCache {
             
             if let assignedDevices = profile["devices"].array {
                 for profile in assignedDevices {
-                    patient._devices.append(DeviceCache.main.findDevice(from: profile));
+                    patient._devices.append(DeviceProxyNetCache.main.findDevice(from: profile));
                 }
             }
         }

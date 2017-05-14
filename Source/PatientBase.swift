@@ -58,6 +58,8 @@ public class PatientBase: Patient, PatientBackend {
     // privte
     private let observers           = ObserverManager<PatientObserver>();
     
+    // MARK: - Initializers/Deinitializers
+    
     /**
      Patient constructor.
      - Parameters:
@@ -89,6 +91,8 @@ public class PatientBase: Patient, PatientBackend {
         PatientCache.main.removePatient(with: identifier);
     }
     
+    // MARK: Observer Interface
+    
     public func addObserver(_ observer: PatientObserver)
     {
         observers.add(observer);
@@ -98,6 +102,8 @@ public class PatientBase: Patient, PatientBackend {
     {
         observers.remove(observer);
     }
+    
+    // MARK: Device Management
     
     /**
      Assign device to patient.
@@ -127,9 +133,10 @@ public class PatientBase: Patient, PatientBackend {
     
     /**
      Enable patient notification.
+     
      - Parameters:
-     - enable:
-     - completionHandler:
+        - enable:
+        - completionHandler:
      */
     public func enableNotification(_ enable: Bool, completionHandler completion: @escaping (Error?) -> Void)
     {
@@ -142,6 +149,8 @@ public class PatientBase: Patient, PatientBackend {
             completion(error);
         }
     }
+    
+    // MARK: - Mutators
     
     /**
      Update patient name.
@@ -181,6 +190,8 @@ public class PatientBase: Patient, PatientBackend {
         }
     }
     
+    // MARK: - Profile
+    
     private func getProfile() -> JSON
     {
         let profile = JSON();
@@ -189,7 +200,6 @@ public class PatientBase: Patient, PatientBackend {
         profile[KeyIdentifier] = identifier;
         profile["name"]        = name.profile;
         profile[KeyPhoto]      = photo?.profile;
-        profile["devices"]    = devices.map() { $0.profile }
         
         return profile;
     }

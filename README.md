@@ -3,7 +3,9 @@
 
 MedKit is the concept for a client API, facilitating bi-directional communication with medical devices.
 
-MedKitDomain extends MedKitCore with enterprise level support for administrative domains.   This currently includes rudimentary support for account management and patient directories.
+MedKitDomain augments MedKitCore with support for enterprise level administrative domains.   This currently includes rudimentary support for account management and patient directories.
+
+MedKitDomain is not an Electronic Health Record (EHR) system.  Although, an EHR may implement the MedKitDomain interface.
 
 ## Dependencies
 

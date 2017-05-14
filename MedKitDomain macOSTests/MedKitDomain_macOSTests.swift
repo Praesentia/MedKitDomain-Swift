@@ -20,7 +20,7 @@
 
 
 import XCTest
-@testable import MedKitDomain_macOS
+@testable import MedKitDomain
 
 class MedKitDomain_macOSTests: XCTestCase {
     

@@ -24,13 +24,15 @@ import MedKitCore;
 
 
 /**
- Patient backend protocol.
+ PatientBackend protocol.
  */
 public protocol PatientBackend: class {
     
+    // MARK: - Properties
     var  backend : PatientBackendDelegate! { get set }
-    var  profile : JSON { get }
+    var  profile : JSON                    { get }
     
+    // MARK: - Device Management
     func addDevice(_ device: Device);
     
 }

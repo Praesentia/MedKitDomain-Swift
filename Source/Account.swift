@@ -58,7 +58,7 @@ public protocol Account: class {
      */
     var principal: Principal { get }
     
-    // MARK: - Observers
+    // MARK: - Observer Interface
     
     /**
      Add observer.

@@ -40,7 +40,7 @@ public protocol PatientDirectory: class {
      */
     func initialize(completionHandler completion: @escaping (Error?) -> Void);
     
-    // MARK: - Observers
+    // MARK: - Observer Interface
     
     /**
      Add observer.

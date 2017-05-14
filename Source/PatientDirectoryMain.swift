@@ -58,7 +58,7 @@ public class PatientDirectoryMain: PatientDirectory, PatientDirectoryBackend {
     }
     
     
-    // MARK: - Observers
+    // MARK: - Observer Interface
     
     /**
      Add observer.
