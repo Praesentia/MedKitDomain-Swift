@@ -31,6 +31,8 @@ import MedKitCore;
  */
 public class Image {
     
+    // MARK: - Types
+    
     /**
      Image type.
      */
@@ -39,15 +41,14 @@ public class Image {
         case Symbolic;
     }
 
-    public var base64 : String? { return _data?.base64EncodedString(); }
-    public var data   : Data?   { return _data; }
-    public var name   : String? { return _name; }
-    public var profile: JSON    { return generateProfile(); }
-    public let type   : ImageType;
+    // MARK: - Properties
+    public var              base64 : String? { return data?.base64EncodedString(); }
+    public private(set) var data   : Data?;
+    public private(set) var name   : String?;
+    public var              profile: JSON    { return generateProfile(); }
+    public let              type   : ImageType;
     
-    // MARK: - Shadowed
-    private var _data: Data?;
-    private var _name: String?;
+    // MARK: - Initializers
     
     /**
      Initialize instance.
@@ -61,8 +62,8 @@ public class Image {
      */
     public init(named name: String)
     {
-        type  = .Symbolic;
-        _name = name;
+        self.type = .Symbolic;
+        self.name = name;
     }
     
     /**
@@ -75,8 +76,8 @@ public class Image {
      */
     public init(data: Data)
     {
-        type  = .Data;
-        _data = data;
+        self.type  = .Data;
+        self.data = data;
     }
     
     /**

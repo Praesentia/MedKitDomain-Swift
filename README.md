@@ -1,11 +1,18 @@
 
 ## Synopsis
 
-MedKit is the concept for a client API, facilitating bi-directional communication with medical devices.
+MedKit is an open source framework facilitating secure, bi-directional
+communication with medical devices.
 
-MedKitDomain augments MedKitCore with support for enterprise level administrative domains.   This currently includes rudimentary support for account management and patient directories.
+MedKitDomain is one of a number of MedKit modules which include: MedKit,
+MedKitCore, MedKitMIP and MedKitSecurity.  MedKitDomain augments MedKitCore
+with support for enterprise level administrative domains.
 
-MedKitDomain is not an Electronic Health Record (EHR) system.  Although, an EHR may implement the MedKitDomain interface.
+MedKitDomain currently provides rudimentary support for account management and
+patient directories.
+
+MedKitDomain is not an Electronic Health Record (EHR) system.  Although, an EHR
+may implement the MedKitDomain interface.
 
 ## Dependencies
 
@@ -13,7 +20,8 @@ MedKitDomain is not an Electronic Health Record (EHR) system.  Although, an EHR 
 
 ## Installation
 
-The initial releases will target iOS and macOS as Xcode projects. However, the intent is to eventually support multiple platforms.
+The initial releases will target iOS and macOS as Xcode projects. However, the
+intent is to eventually support multiple platforms.
 
 ## License
 

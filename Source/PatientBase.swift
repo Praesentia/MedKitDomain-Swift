@@ -35,28 +35,20 @@ import MedKitCore;
  */
 public class PatientBase: Patient, PatientBackend {
     
-    // primary
-    public var  birthdate           : Date?    { return _birthdate; };
-    public var  identifier          : String   { return _identifier; }
-    public var  name                : Name     { return _name; };
-    public var  photo               : Image?   { return _photo; };
+    // MARK: - Properties
+    public private(set) var  birthdate  : Date?;
+    public private(set) var  identifier = String();
+    public private(set) var  name       = Name();
+    public private(set) var  photo      : Image?;
     
     //
-    public var  backend             : PatientBackendDelegate!;
-    public var  devices             : [Device] { return _devices; };
-    public var  notificationEnabled : Bool     { return _notificationEnabled; }
-    public var  profile             : JSON     { return getProfile(); }
-    
-    // MARK: - Shadowed
-    public var _birthdate           : Date?;
-    public var _identifier          = String();
-    public var _name                = Name();
-    public var _notificationEnabled : Bool = false;
-    public var _photo               : Image?;
-    public var _devices             = [Device]();
+    public var               backend             : PatientBackendDelegate!;
+    public internal(set) var devices             = [Device](); // TODO: internal
+    public private(set)  var notificationEnabled = false;
+    public var               profile             : JSON     { return getProfile(); }
     
     // privte
-    private let observers           = ObserverManager<PatientObserver>();
+    private let observers = ObserverManager<PatientObserver>();
     
     // MARK: - Initializers/Deinitializers
     
@@ -80,10 +72,10 @@ public class PatientBase: Patient, PatientBackend {
     {
         self.backend = backend;
         
-        _birthdate  = Date.rfc3339(profile["birthdate"].string!);
-        _identifier = profile[KeyIdentifier].string!;
-        _name       = Name(from: profile["name"]);
-        _photo      = Image(from: profile[KeyPhoto]);
+        birthdate  = Date.rfc3339(profile["birthdate"].string!);
+        identifier = profile[KeyIdentifier].string!;
+        name       = Name(from: profile["name"]);
+        photo      = Image(from: profile[KeyPhoto]);
     }
     
     deinit
@@ -143,7 +135,7 @@ public class PatientBase: Patient, PatientBackend {
         backend.patientEnableNotification(self, enable: enable) { error in
             
             if error == nil {
-                self._notificationEnabled = enable;
+                self.notificationEnabled = enable;
             }
             
             completion(error);
@@ -163,7 +155,7 @@ public class PatientBase: Patient, PatientBackend {
         backend.patientUpdateName(self, name: name) { error in
             
             if error == nil {
-                self._name = name;
+                self.name = name;
                 self.observers.withEach { $0.patientDidUpdateName(self); }
             }
             
@@ -182,7 +174,7 @@ public class PatientBase: Patient, PatientBackend {
         backend.patientUpdatePhoto(self, photo: photo) { error in
             
             if error == nil {
-                self._photo = Image(data: photo.data!);
+                self.photo = Image(data: photo.data!);
                 self.observers.withEach { $0.patientDidUpdatePhoto(self); }
             }
             
@@ -208,7 +200,7 @@ public class PatientBase: Patient, PatientBackend {
     
     public func addDevice(_ device: Device)
     {
-        _devices.append(device);
+        devices.append(device);
     }
     
 }
