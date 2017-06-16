@@ -78,9 +78,9 @@ public class AccountManagerMain: AccountManager, AccountManagerBackend {
     /**
      Add account.
      */
-    public func addAccount(with identity: Identity, description: String?, credentials: Credentials, completionHandler completion: @escaping (Account?, Error?) -> Void)
+    public func addAccount(with identity: Identity, description: String?, secret: [UInt8], completionHandler completion: @escaping (Account?, Error?) -> Void)
     {
-        backend.accountManager(self, addAccountWith: identity, description: description, credentials: credentials) { account, error in
+        backend.accountManager(self, addAccountWith: identity, description: description, secret: secret) { account, error in
             if error == nil, let account = account {
                 self.observers.withEach { $0.accountManager(self, didAdd: account) }
                 self.updatePrimary(account);

@@ -58,7 +58,7 @@ public protocol AccountManager {
     /**
      Add account.
      */
-    func addAccount(with identity: Identity, description: String?, credentials: Credentials, completionHandler completion: @escaping (Account?, Error?) -> Void);
+    func addAccount(with identity: Identity, description: String?, secret: [UInt8], completionHandler completion: @escaping (Account?, Error?) -> Void);
     
     /**
      Remove account.

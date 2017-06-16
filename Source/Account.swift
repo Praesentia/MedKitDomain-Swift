@@ -31,13 +31,6 @@ public protocol Account: class {
     // MARK: - Properties
     
     /**
-     Account credentials.
-     
-     Account credentials are used to authenticate the account identity.
-     */
-    var credentials: Credentials { get }
-    
-    /**
      Account description.
      
      A short description of the account, provided as a convenience.
@@ -50,13 +43,6 @@ public protocol Account: class {
      Uniquely identifies the account.
      */
     var identity: Identity { get }
-    
-    /**
-     Principal.
-     
-     A Principal representation of the account.
-     */
-    var principal: Principal { get }
     
     // MARK: - Observer Interface
     
