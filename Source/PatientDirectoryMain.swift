@@ -19,8 +19,8 @@
  */
 
 
-import Foundation;
-import MedKitCore;
+import Foundation
+import MedKitCore
 
 
 /**
@@ -28,16 +28,16 @@ import MedKitCore;
  */
 public class PatientDirectoryMain: PatientDirectory, PatientDirectoryBackend {
     
-    public static let shared = PatientDirectoryMain();
+    public static let shared = PatientDirectoryMain()
     
     // frontend
-    public var reachable : Bool { return backend.patientDirectoryReachable(self); }
+    public var reachable : Bool { return backend.patientDirectoryReachable(self) }
     
     // backend
-    public var backend : PatientDirectoryBackendDelegate! = DefaultBackend.main;
+    public var backend : PatientDirectoryBackendDelegate! = DefaultBackend.main
     
     // MARK: - Private
-    private let observers = ObserverManager<PatientDirectoryObserver>();
+    private let observers = ObserverManager<PatientDirectoryObserver>()
     
     /**
      Initialize instance.
@@ -54,7 +54,7 @@ public class PatientDirectoryMain: PatientDirectory, PatientDirectoryBackend {
      */
     public func initialize(completionHandler completion: @escaping (Error?) -> Void)
     {
-        backend.patientDirectoryInitialize(self, completionHandler: completion);
+        backend.patientDirectoryInitialize(self, completionHandler: completion)
     }
     
     
@@ -67,12 +67,12 @@ public class PatientDirectoryMain: PatientDirectory, PatientDirectoryBackend {
      */
     public func addObserver(_ observer: PatientDirectoryObserver)
     {
-        observers.add(observer);
+        observers.add(observer)
     }
     
     public func removeObserver(_ observer: PatientDirectoryObserver)
     {
-        observers.remove(observer);
+        observers.remove(observer)
     }
     
     // MARK: - Updates
@@ -85,7 +85,7 @@ public class PatientDirectoryMain: PatientDirectory, PatientDirectoryBackend {
      */
     public func addPatient(_ patient: Patient, completionHandler completion: @escaping (Error?) -> Void)
     {
-        backend.patientDirectory(self, add: patient, completionHandler: completion);
+        backend.patientDirectory(self, add: patient, completionHandler: completion)
     }
     
     /**
@@ -96,7 +96,7 @@ public class PatientDirectoryMain: PatientDirectory, PatientDirectoryBackend {
      */
     public func removePatient(_ patient: Patient, completionHandler completion: @escaping (Error?) -> Void)
     {
-        backend.patientDirectory(self, remove: patient, completionHandler: completion);
+        backend.patientDirectory(self, remove: patient, completionHandler: completion)
     }
     
     // MARK: - Search
@@ -109,7 +109,7 @@ public class PatientDirectoryMain: PatientDirectory, PatientDirectoryBackend {
      */
     public func findPatient(with profile: JSON) -> Patient
     {
-        return PatientCache.main.findPatient(from: profile);
+        return PatientCache.main.findPatient(from: profile)
     }
     
     /**
@@ -120,7 +120,7 @@ public class PatientDirectoryMain: PatientDirectory, PatientDirectoryBackend {
      */
     public func findPatient(withIdentifier identifier: String, completionHandler completion: @escaping (Patient?, Error?) -> Void)
     {
-        backend.patientDirectory(self, findPatientWithIdentifier: identifier, completionHandler: completion);
+        backend.patientDirectory(self, findPatientWithIdentifier: identifier, completionHandler: completion)
     }
     
     /**
@@ -132,7 +132,7 @@ public class PatientDirectoryMain: PatientDirectory, PatientDirectoryBackend {
      */
     public func search(using text: String?, completionHandler completion: @escaping ([Patient]?, Error?) -> Void)
     {
-        backend.patientDirectory(self, searchUsing: text, completionHandler: completion);
+        backend.patientDirectory(self, searchUsing: text, completionHandler: completion)
     }
     
 }

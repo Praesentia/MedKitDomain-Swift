@@ -19,8 +19,8 @@
  */
 
 
-import Foundation;
-import MedKitCore;
+import Foundation
+import MedKitCore
 
 
 /**
@@ -37,16 +37,16 @@ public class Image {
      Image type.
      */
     public enum ImageType {
-        case Data;
-        case Symbolic;
+        case data
+        case symbolic
     }
 
     // MARK: - Properties
-    public var              base64 : String? { return data?.base64EncodedString(); }
-    public private(set) var data   : Data?;
-    public private(set) var name   : String?;
-    public var              profile: JSON    { return generateProfile(); }
-    public let              type   : ImageType;
+    public var              base64 : String? { return data?.base64EncodedString() }
+    public private(set) var data   : Data?
+    public private(set) var name   : String?
+    public var              profile: JSON    { return generateProfile() }
+    public let              type   : ImageType
     
     // MARK: - Initializers
     
@@ -62,8 +62,8 @@ public class Image {
      */
     public init(named name: String)
     {
-        self.type = .Symbolic;
-        self.name = name;
+        self.type = .symbolic
+        self.name = name
     }
     
     /**
@@ -76,8 +76,8 @@ public class Image {
      */
     public init(data: Data)
     {
-        self.type  = .Data;
-        self.data = data;
+        self.type  = .data
+        self.data = data
     }
     
     /**
@@ -90,13 +90,13 @@ public class Image {
      */
     public convenience init?(fromBase64 base64: String)
     {
-        let data = NSData(base64Encoded: base64) as Data?;
+        let data = NSData(base64Encoded: base64) as Data?
         
         if data != nil {
-            self.init(data: data!);
+            self.init(data: data!)
         }
         else {
-            return nil;
+            return nil
         }
     }
     
@@ -113,13 +113,13 @@ public class Image {
     {
         switch profile["type"].string! {
         case "data" :
-            self.init(fromBase64: profile["value"].string!);
+            self.init(fromBase64: profile["value"].string!)
             
         case "symbolic" :
-            self.init(named: profile["value"].string!);
+            self.init(named: profile["value"].string!)
             
         default :
-            return nil;
+            return nil
         }
     }
     
@@ -130,19 +130,19 @@ public class Image {
      */
     private func generateProfile() -> JSON
     {
-        let profile = JSON();
+        let profile = JSON()
         
         switch type {
-        case .Data :
-            profile["type"]  = "data";
-            profile["value"] = base64!;
+        case .data :
+            profile["type"]  = "data"
+            profile["value"] = base64!
         
-        case .Symbolic :
-            profile["type"]  = "symbolic";
-            profile["value"] = name!;
+        case .symbolic :
+            profile["type"]  = "symbolic"
+            profile["value"] = name!
         }
         
-        return profile;
+        return profile
     }
     
 }

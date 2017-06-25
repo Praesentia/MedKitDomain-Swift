@@ -19,8 +19,8 @@
  */
 
 
-import Foundation;
-import MedKitCore;
+import Foundation
+import MedKitCore
 
 
 /**
@@ -33,7 +33,7 @@ public protocol AccountManagerObserver: class {
      
      Notifies an observer a new account has been added to the manager.
      */
-    func accountManager(_ manager: AccountManager, didAdd account: Account);
+    func accountManager(_ manager: AccountManager, didAdd account: Account)
     
     /**
      Account manager did remove account.
@@ -41,7 +41,7 @@ public protocol AccountManagerObserver: class {
      Notifies an observer an existing account has been removed from the
      manager.
      */
-    func accountManager(_ manager: AccountManager, didRemove account: Account);
+    func accountManager(_ manager: AccountManager, didRemove account: Account)
     
     /**
      Account manager did update.
@@ -49,14 +49,14 @@ public protocol AccountManagerObserver: class {
      Notifies an observer that the manager has been reset, typically called
      after being initialized.
      */
-    func accountManagerDidUpdate(_ manager: AccountManager);
+    func accountManagerDidUpdate(_ manager: AccountManager)
     
     /**
      Account manager did primary.
      
      Notifies an observer that the primary account has been updated.
      */
-    func accountManagerDidUpdatePrimary(_ manager: AccountManager);
+    func accountManagerDidUpdatePrimary(_ manager: AccountManager)
     
 }
 

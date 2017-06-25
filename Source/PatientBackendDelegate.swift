@@ -19,8 +19,8 @@
  */
 
 
-import Foundation;
-import MedKitCore;
+import Foundation
+import MedKitCore
 
 
 /**
@@ -28,10 +28,10 @@ import MedKitCore;
  */
 public protocol PatientBackendDelegate: class {
     
-    func patientAssignDevice(_ patient: PatientBackend, device: Device, completionHandler completion: @escaping (Error?) -> Void);
-    func patientEnableNotification(_ patient: PatientBackend, enable: Bool, completionHandler completion: @escaping (Error?) -> Void);
-    func patientUpdateName(_ patient: PatientBackend, name: Name, completionHandler completion: @escaping (Error?) -> Void);
-    func patientUpdatePhoto(_ patient: PatientBackend, photo: Image, completionHandler completion: @escaping (Error?) -> Void);
+    func patientAssignDevice(_ patient: PatientBackend, device: Device, completionHandler completion: @escaping (Error?) -> Void)
+    func patientEnableNotification(_ patient: PatientBackend, enable: Bool, completionHandler completion: @escaping (Error?) -> Void)
+    func patientUpdateName(_ patient: PatientBackend, name: Name, completionHandler completion: @escaping (Error?) -> Void)
+    func patientUpdatePhoto(_ patient: PatientBackend, photo: Image, completionHandler completion: @escaping (Error?) -> Void)
 }
 
 

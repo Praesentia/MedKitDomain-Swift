@@ -19,8 +19,8 @@
  */
 
 
-import Foundation;
-import MedKitCore;
+import Foundation
+import MedKitCore
 
 
 /**
@@ -28,51 +28,51 @@ import MedKitCore;
  */
 public class PatientCache {
     
-    public static let main = PatientCache();
+    public static let main = PatientCache()
     
-    public var backend: PatientBackendDelegate! = DefaultBackend.main;
+    public var backend: PatientBackendDelegate! = DefaultBackend.main
     
     private struct Entry {
-        unowned let patient: PatientBase;
+        unowned let patient: PatientBase
         
         init(_ patient: PatientBase)
         {
-            self.patient = patient;
+            self.patient = patient
         }
     }
     
-    private var cache = [String : Entry]();
+    private var cache = [String : Entry]()
     
     func findPatient(with identifier: String) -> Patient?
     {
-        return cache[identifier]?.patient;
+        return cache[identifier]?.patient
     }
     
     func findPatient(from profile: JSON) -> Patient
     {
-        let identifier = profile[KeyIdentifier].string!;
-        let patient    : PatientBase;
+        let identifier = profile[KeyIdentifier].string!
+        let patient    : PatientBase
         
         if let entry = cache[identifier] {
-            patient = entry.patient;
+            patient = entry.patient
         }
         else {
-            patient = PatientBase(backend: backend, from: profile);
-            cache[identifier] = Entry(patient);
+            patient = PatientBase(backend: backend, from: profile)
+            cache[identifier] = Entry(patient)
             
             if let assignedDevices = profile["devices"].array {
                 for profile in assignedDevices {
-                    patient.devices.append(DeviceProxyNetCache.main.findDevice(from: profile));
+                    patient.devices.append(DeviceProxyNetCache.main.findDevice(from: profile))
                 }
             }
         }
         
-        return patient;
+        return patient
     }
     
     func removePatient(with identifier: String)
     {
-        cache[identifier] = nil;
+        cache[identifier] = nil
     }
     
 }

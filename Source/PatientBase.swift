@@ -19,8 +19,8 @@
  */
 
 
-import Foundation;
-import MedKitCore;
+import Foundation
+import MedKitCore
 
 
 /**
@@ -36,19 +36,19 @@ import MedKitCore;
 public class PatientBase: Patient, PatientBackend {
     
     // MARK: - Properties
-    public private(set) var  birthdate  : Date?;
-    public private(set) var  identifier = String();
-    public private(set) var  name       = Name();
-    public private(set) var  photo      : Image?;
+    public private(set) var  birthdate  : Date?
+    public private(set) var  identifier = String()
+    public private(set) var  name       = Name()
+    public private(set) var  photo      : Image?
     
     //
-    public var               backend             : PatientBackendDelegate!;
-    public internal(set) var devices             = [Device](); // TODO: internal
-    public private(set)  var notificationEnabled = false;
-    public var               profile             : JSON     { return getProfile(); }
+    public var               backend             : PatientBackendDelegate!
+    public internal(set) var devices             = [Device]() // TODO: internal
+    public private(set)  var notificationEnabled = false
+    public var               profile             : JSON     { return getProfile() }
     
     // privte
-    private let observers = ObserverManager<PatientObserver>();
+    private let observers = ObserverManager<PatientObserver>()
     
     // MARK: - Initializers/Deinitializers
     
@@ -59,7 +59,7 @@ public class PatientBase: Patient, PatientBackend {
      */
     init(backend: PatientBackendDelegate)
     {
-        self.backend = backend;
+        self.backend = backend
     }
     
     /**
@@ -70,29 +70,29 @@ public class PatientBase: Patient, PatientBackend {
      */
     init(backend: PatientBackendDelegate, from profile: JSON)
     {
-        self.backend = backend;
+        self.backend = backend
         
-        birthdate  = Date.rfc3339(profile["birthdate"].string!);
-        identifier = profile[KeyIdentifier].string!;
-        name       = Name(from: profile["name"]);
-        photo      = Image(from: profile[KeyPhoto]);
+        birthdate  = Date.rfc3339(profile["birthdate"].string!)
+        identifier = profile[KeyIdentifier].string!
+        name       = Name(from: profile["name"])
+        photo      = Image(from: profile[KeyPhoto])
     }
     
     deinit
     {
-        PatientCache.main.removePatient(with: identifier);
+        PatientCache.main.removePatient(with: identifier)
     }
     
     // MARK: Observer Interface
     
     public func addObserver(_ observer: PatientObserver)
     {
-        observers.add(observer);
+        observers.add(observer)
     }
     
     public func removeObserver(_ observer: PatientObserver)
     {
-        observers.remove(observer);
+        observers.remove(observer)
     }
     
     // MARK: Device Management
@@ -105,22 +105,22 @@ public class PatientBase: Patient, PatientBackend {
      */
     public func assignDevice(_ device: Device, completionHandler completion: @escaping (Error?) -> Void)
     {
-        let sync = Sync();
+        let sync = Sync()
         
-        sync.incr();
+        sync.incr()
         if !devices.contains(where: { $0 === device }) {
             backend.patientAssignDevice(self, device: device) { error in
                 if error == nil {
-                    self.observers.withEach { $0.patient(self, didAdd: device); }
+                    self.observers.withEach { $0.patient(self, didAdd: device) }
                 }
-                sync.decr(error);
+                sync.decr(error)
             }
         }
         else {
-            sync.decr(MedKitError.Duplicate);
+            sync.decr(MedKitError.duplicate)
         }
         
-        sync.close(completionHandler: completion);
+        sync.close(completionHandler: completion)
     }
     
     /**
@@ -135,10 +135,10 @@ public class PatientBase: Patient, PatientBackend {
         backend.patientEnableNotification(self, enable: enable) { error in
             
             if error == nil {
-                self.notificationEnabled = enable;
+                self.notificationEnabled = enable
             }
             
-            completion(error);
+            completion(error)
         }
     }
     
@@ -155,11 +155,11 @@ public class PatientBase: Patient, PatientBackend {
         backend.patientUpdateName(self, name: name) { error in
             
             if error == nil {
-                self.name = name;
-                self.observers.withEach { $0.patientDidUpdateName(self); }
+                self.name = name
+                self.observers.withEach { $0.patientDidUpdateName(self) }
             }
             
-            completion(error);
+            completion(error)
         }
     }
     
@@ -174,11 +174,11 @@ public class PatientBase: Patient, PatientBackend {
         backend.patientUpdatePhoto(self, photo: photo) { error in
             
             if error == nil {
-                self.photo = Image(data: photo.data!);
-                self.observers.withEach { $0.patientDidUpdatePhoto(self); }
+                self.photo = Image(data: photo.data!)
+                self.observers.withEach { $0.patientDidUpdatePhoto(self) }
             }
             
-            completion(error);
+            completion(error)
         }
     }
     
@@ -186,21 +186,21 @@ public class PatientBase: Patient, PatientBackend {
     
     private func getProfile() -> JSON
     {
-        let profile = JSON();
+        let profile = JSON()
         
-        profile["birthdate"]  = birthdate?.rfc3339;
-        profile[KeyIdentifier] = identifier;
-        profile["name"]        = name.profile;
-        profile[KeyPhoto]      = photo?.profile;
+        profile["birthdate"]  = birthdate?.rfc3339
+        profile[KeyIdentifier] = identifier
+        profile["name"]        = name.profile
+        profile[KeyPhoto]      = photo?.profile
         
-        return profile;
+        return profile
     }
     
     // MARK: - PatientBackend
     
     public func addDevice(_ device: Device)
     {
-        devices.append(device);
+        devices.append(device)
     }
     
 }

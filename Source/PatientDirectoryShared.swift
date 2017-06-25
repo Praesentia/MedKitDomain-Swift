@@ -19,13 +19,13 @@
  */
 
 
-import Foundation;
-import MedKitCore;
+import Foundation
+import MedKitCore
 
 
 public class PatientDirectoryShared {
     
-    public static var main: PatientDirectory { return PatientDirectoryMain.shared; }
+    public static var main: PatientDirectory { return PatientDirectoryMain.shared }
     
 }
 

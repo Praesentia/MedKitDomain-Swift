@@ -19,8 +19,8 @@
  */
 
 
-import Foundation;
-import MedKitCore;
+import Foundation
+import MedKitCore
 
 
 /**
@@ -30,7 +30,7 @@ import MedKitCore;
  */
 public class DefaultBackend: PatientBackendDelegate, PatientDirectoryBackendDelegate {
     
-    public static let main = DefaultBackend();
+    public static let main = DefaultBackend()
     
     private init()
     {
@@ -40,54 +40,54 @@ public class DefaultBackend: PatientBackendDelegate, PatientDirectoryBackendDele
     
     open func patientAssignDevice(_ patient: PatientBackend, device: Device, completionHandler completion: @escaping (Error?) -> Void)
     {
-        DispatchQueue.main.async() { completion(MedKitError.NotSupported); }
+        DispatchQueue.main.async { completion(MedKitError.notSupported) }
     }
     
     open func patientEnableNotification(_ patient: PatientBackend, enable: Bool, completionHandler completion: @escaping (Error?) -> Void)
     {
-        DispatchQueue.main.async() { completion(MedKitError.NotSupported); }
+        DispatchQueue.main.async { completion(MedKitError.notSupported) }
     }
     
     open func patientUpdateName(_ patient: PatientBackend, name: Name, completionHandler completion: @escaping (Error?) -> Void)
     {
-        DispatchQueue.main.async() { completion(MedKitError.NotSupported); }
+        DispatchQueue.main.async { completion(MedKitError.notSupported) }
     }
     
     open func patientUpdatePhoto(_ patient: PatientBackend, photo: Image, completionHandler completion: @escaping (Error?) -> Void)
     {
-        DispatchQueue.main.async() { completion(MedKitError.NotSupported); }
+        DispatchQueue.main.async { completion(MedKitError.notSupported) }
     }
     
     // MARK: - PatientDirectoryBackend
     
     open func patientDirectoryInitialize(_ directory: PatientDirectoryBackend, completionHandler completion: @escaping (Error?) -> Void)
     {
-        DispatchQueue.main.async() { completion(nil); }
+        DispatchQueue.main.async { completion(nil) }
     }
     
     open func patientDirectoryReachable(_ directory: PatientDirectoryBackend) -> Bool
     {
-        return false;
+        return false
     }
     
     open func patientDirectory(_ directory: PatientDirectoryBackend, add patient: Patient, completionHandler completion: @escaping (Error?) -> Void)
     {
-        DispatchQueue.main.async() { completion(MedKitError.NotSupported); }
+        DispatchQueue.main.async { completion(MedKitError.notSupported) }
     }
     
     open func patientDirectory(_ directory: PatientDirectoryBackend, remove patient: Patient, completionHandler completion: @escaping (Error?) -> Void)
     {
-        DispatchQueue.main.async() { completion(MedKitError.NotSupported); }
+        DispatchQueue.main.async { completion(MedKitError.notSupported) }
     }
     
     open func patientDirectory(_ directory: PatientDirectoryBackend, findPatientWithIdentifier identifier: String, completionHandler completion: @escaping (Patient?, Error?) -> Void)
     {
-        DispatchQueue.main.async() { completion(nil, MedKitError.NotSupported); }
+        DispatchQueue.main.async { completion(nil, MedKitError.notSupported) }
     }
     
     open func patientDirectory(_ directory: PatientDirectoryBackend, searchUsing text: String?, completionHandler completion: @escaping ([Patient]?, Error?) -> Void)
     {
-        DispatchQueue.main.async() { completion(nil, MedKitError.NotSupported); }
+        DispatchQueue.main.async { completion(nil, MedKitError.notSupported) }
     }
     
 }

@@ -19,8 +19,8 @@
  */
 
 
-import Foundation;
-import MedKitCore;
+import Foundation
+import MedKitCore
 
 
 /**
@@ -54,7 +54,7 @@ public protocol Account: class {
      - Parameters:
         - observer: An observer instance.
      */
-    func addObserver(_ observer: AccountObserver);
+    func addObserver(_ observer: AccountObserver)
     
     /**
      Remove observer.
@@ -65,7 +65,7 @@ public protocol Account: class {
         - observer: An exisitng observer to be removed from the account
                     instance.
      */
-    func removeObserver(_ observer: AccountObserver);
+    func removeObserver(_ observer: AccountObserver)
     
     // MARK: - Properties Updates
     
@@ -81,7 +81,7 @@ public protocol Account: class {
             - error: Nil if successful, otherwise the error that prevented the
                      operation from completing.
      */
-    func updateDescription(_ description: String?, completionHandler completion: @escaping (Error?) -> Void);
+    func updateDescription(_ description: String?, completionHandler completion: @escaping (Error?) -> Void)
     
 }
 

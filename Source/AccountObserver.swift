@@ -19,8 +19,8 @@
  */
 
 
-import Foundation;
-import MedKitCore;
+import Foundation
+import MedKitCore
 
 
 /**
@@ -38,7 +38,7 @@ public protocol AccountObserver: class {
      - Parameters:
         - account: The account for which the credentials where updated.
      */
-    func accountDidUpdateCredentials(_ account: Account);
+    func accountDidUpdateCredentials(_ account: Account)
     
     /**
      Account did update description.
@@ -48,7 +48,7 @@ public protocol AccountObserver: class {
      - Parameters:
         - account: The account for which the description was updated.
      */
-    func accountDidUpdateDescription(_ account: Account);
+    func accountDidUpdateDescription(_ account: Account)
     
 }
 

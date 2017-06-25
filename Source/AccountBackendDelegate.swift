@@ -19,7 +19,7 @@
  */
 
 
-import Foundation;
+import Foundation
 
 
 /**
@@ -39,7 +39,7 @@ public protocol AccountBackendDelegate: class {
                      operation from completing.
 
      */
-    func account(_ account: AccountBackend, updateDescription description: String?, completionHandler completion: @escaping (Error?) -> Void);
+    func account(_ account: AccountBackend, updateDescription description: String?, completionHandler completion: @escaping (Error?) -> Void)
     
 }
 

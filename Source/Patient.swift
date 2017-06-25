@@ -19,8 +19,8 @@
  */
 
 
-import Foundation;
-import MedKitCore;
+import Foundation
+import MedKitCore
 
 
 /**
@@ -38,13 +38,13 @@ public protocol Patient: class {
     var  notificationEnabled : Bool     { get }
     var  profile             : JSON     { get }
     
-    func addObserver(_ observer: PatientObserver);
-    func removeObserver(_ observer: PatientObserver);
+    func addObserver(_ observer: PatientObserver)
+    func removeObserver(_ observer: PatientObserver)
     
-    func assignDevice(_ device: Device, completionHandler completion: @escaping (Error?) -> Void);
-    func enableNotification(_ enable: Bool, completionHandler completion: @escaping (Error?) -> Void);
-    func updateName(_ name: Name, completionHandler completion: @escaping (Error?) -> Void);
-    func updatePhoto(_ photo: Image, completionHandler completion: @escaping (Error?) -> Void);
+    func assignDevice(_ device: Device, completionHandler completion: @escaping (Error?) -> Void)
+    func enableNotification(_ enable: Bool, completionHandler completion: @escaping (Error?) -> Void)
+    func updateName(_ name: Name, completionHandler completion: @escaping (Error?) -> Void)
+    func updatePhoto(_ photo: Image, completionHandler completion: @escaping (Error?) -> Void)
 
 }
 
@@ -52,7 +52,7 @@ public extension Patient {
     
     public static func find(from profile: JSON) -> Patient
     {
-        return PatientCache.main.findPatient(from: profile);
+        return PatientCache.main.findPatient(from: profile)
     }
     
 }

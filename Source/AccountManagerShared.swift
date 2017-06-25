@@ -19,7 +19,7 @@
  */
 
 
-import Foundation;
+import Foundation
 
 
 /**
@@ -32,7 +32,7 @@ public class AccountManagerShared {
     /**
      Main account manager.
      */
-    public static var main: AccountManager { return AccountManagerMain.shared; }
+    public static var main: AccountManager { return AccountManagerMain.shared }
     
 }
 

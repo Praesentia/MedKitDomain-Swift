@@ -19,8 +19,8 @@
  */
 
 
-import Foundation;
-import MedKitCore;
+import Foundation
+import MedKitCore
 
 
 /**
@@ -43,32 +43,32 @@ public protocol AccountManager {
     /**
      Initialize
      */
-    func initialize(completionHandler completion: @escaping (Error?) -> Void);
+    func initialize(completionHandler completion: @escaping (Error?) -> Void)
     
     /**
      Add observer.
      */
-    func addObserver(_ observer: AccountManagerObserver);
+    func addObserver(_ observer: AccountManagerObserver)
 
     /**
      Remove observer.
      */
-    func removeObserver(_ observer: AccountManagerObserver);
+    func removeObserver(_ observer: AccountManagerObserver)
     
     /**
      Add account.
      */
-    func addAccount(with identity: Identity, description: String?, secret: [UInt8], completionHandler completion: @escaping (Account?, Error?) -> Void);
+    func addAccount(with identity: Identity, description: String?, secret: [UInt8], completionHandler completion: @escaping (Account?, Error?) -> Void)
     
     /**
      Remove account.
      */
-    func removeAccount(with identity: Identity, completionHandler completion: @escaping (Error?) -> Void);
+    func removeAccount(with identity: Identity, completionHandler completion: @escaping (Error?) -> Void)
     
     /**
      Update primary account.
      */
-    func updatePrimary(_ account: Account?);
+    func updatePrimary(_ account: Account?)
     
 }
 

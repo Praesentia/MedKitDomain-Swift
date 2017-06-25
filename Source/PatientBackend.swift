@@ -19,8 +19,8 @@
  */
 
 
-import Foundation;
-import MedKitCore;
+import Foundation
+import MedKitCore
 
 
 /**
@@ -33,7 +33,7 @@ public protocol PatientBackend: class {
     var  profile : JSON                    { get }
     
     // MARK: - Device Management
-    func addDevice(_ device: Device);
+    func addDevice(_ device: Device)
     
 }
 

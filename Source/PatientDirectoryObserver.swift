@@ -19,8 +19,8 @@
  */
 
 
-import Foundation;
-import MedKitCore;
+import Foundation
+import MedKitCore
 
 
 /**
@@ -28,7 +28,7 @@ import MedKitCore;
  */
 public protocol PatientDirectoryObserver: class {
     
-    func patientDirectoryDidUpdateReachability(_ directory: PatientDirectory);
+    func patientDirectoryDidUpdateReachability(_ directory: PatientDirectory)
     
 }
 

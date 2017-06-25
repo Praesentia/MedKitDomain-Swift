@@ -19,8 +19,8 @@
  */
 
 
-import Foundation;
-import MedKitCore;
+import Foundation
+import MedKitCore
 
 
 /**
@@ -29,16 +29,16 @@ import MedKitCore;
 public protocol PatientDirectoryBackendDelegate: class {
     
     // Meta
-    func patientDirectoryInitialize(_ directory: PatientDirectoryBackend, completionHandler completion: @escaping (Error?) -> Void);
-    func patientDirectoryReachable(_ directory: PatientDirectoryBackend) -> Bool;
+    func patientDirectoryInitialize(_ directory: PatientDirectoryBackend, completionHandler completion: @escaping (Error?) -> Void)
+    func patientDirectoryReachable(_ directory: PatientDirectoryBackend) -> Bool
     
     // Patient management.
-    func patientDirectory(_ directory: PatientDirectoryBackend, add patient: Patient, completionHandler completion: @escaping (Error?) -> Void);
-    func patientDirectory(_ directory: PatientDirectoryBackend, remove patient: Patient, completionHandler completion: @escaping (Error?) -> Void);
+    func patientDirectory(_ directory: PatientDirectoryBackend, add patient: Patient, completionHandler completion: @escaping (Error?) -> Void)
+    func patientDirectory(_ directory: PatientDirectoryBackend, remove patient: Patient, completionHandler completion: @escaping (Error?) -> Void)
     
     // Search features.
-    func patientDirectory(_ directory: PatientDirectoryBackend, findPatientWithIdentifier identifier: String, completionHandler completion: @escaping (Patient?, Error?) -> Void);
-    func patientDirectory(_ directory: PatientDirectoryBackend, searchUsing text: String?, completionHandler completion: @escaping ([Patient]?, Error?) -> Void);
+    func patientDirectory(_ directory: PatientDirectoryBackend, findPatientWithIdentifier identifier: String, completionHandler completion: @escaping (Patient?, Error?) -> Void)
+    func patientDirectory(_ directory: PatientDirectoryBackend, searchUsing text: String?, completionHandler completion: @escaping ([Patient]?, Error?) -> Void)
     
 }
 

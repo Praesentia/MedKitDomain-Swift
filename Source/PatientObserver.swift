@@ -19,8 +19,8 @@
  */
 
 
-import Foundation;
-import MedKitCore;
+import Foundation
+import MedKitCore
 
 
 /**
@@ -28,10 +28,10 @@ import MedKitCore;
  */
 public protocol PatientObserver: class {
     
-    func patientDidUpdatePhoto(_ patient: Patient);
-    func patientDidUpdateName(_ patient: Patient);
-    func patient(_ patient: Patient, didAdd device: Device);
-    func patient(_ patient: Patient, didRemove device: Device);
+    func patientDidUpdatePhoto(_ patient: Patient)
+    func patientDidUpdateName(_ patient: Patient)
+    func patient(_ patient: Patient, didAdd device: Device)
+    func patient(_ patient: Patient, didRemove device: Device)
     
 }
 

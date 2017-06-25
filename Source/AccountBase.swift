@@ -19,8 +19,8 @@
  */
 
 
-import Foundation;
-import MedKitCore;
+import Foundation
+import MedKitCore
 
 
 /**
@@ -31,23 +31,23 @@ import MedKitCore;
  */
 public class AccountBase: Account, AccountBackend {
     
-    public var description : String?;
-    public let identity    : Identity;
+    public var description : String?
+    public let identity    : Identity
     
     // backend
-    public var backend : AccountBackendDelegate!;
-    public var profile : JSON { return getProfile(); }
+    public var backend : AccountBackendDelegate!
+    public var profile : JSON { return getProfile() }
     
     // MARK: - Private
-    private var observers = ObserverManager<AccountObserver>();
+    private var observers = ObserverManager<AccountObserver>()
     
     /**
      Initialize instance.
      */
     public init(identity: Identity, description: String?)
     {
-        self.identity    = identity;
-        self.description = description;
+        self.identity    = identity
+        self.description = description
     }
     
     /**
@@ -55,8 +55,8 @@ public class AccountBase: Account, AccountBackend {
      */
     public init(from profile: JSON)
     {
-        description = profile[KeyDescription].string;
-        identity    = Identity(from: profile[KeyIdentity]);
+        description = profile[KeyDescription].string
+        identity    = Identity(from: profile[KeyIdentity])
     }
     
     /**
@@ -66,12 +66,12 @@ public class AccountBase: Account, AccountBackend {
      */
     public func addObserver(_ observer: AccountObserver)
     {
-        observers.add(observer);
+        observers.add(observer)
     }
     
     public func removeObserver(_ observer: AccountObserver)
     {
-        observers.remove(observer);
+        observers.remove(observer)
     }
     
     /**
@@ -85,9 +85,9 @@ public class AccountBase: Account, AccountBackend {
     {
         backend.account(self, updateDescription: description) { error in
             if error == nil {
-                self.observers.withEach { $0.accountDidUpdateDescription(self); }
+                self.observers.withEach { $0.accountDidUpdateDescription(self) }
             }
-            completion(error);
+            completion(error)
         }
     }
     
@@ -96,12 +96,12 @@ public class AccountBase: Account, AccountBackend {
      */
     private func getProfile() -> JSON
     {
-        let profile = JSON();
+        let profile = JSON()
         
-        profile[KeyDescription] = description;
-        profile[KeyIdentity]    = identity.profile;
+        profile[KeyDescription] = description
+        profile[KeyIdentity]    = identity.profile
         
-        return profile;
+        return profile
     }
     
 }

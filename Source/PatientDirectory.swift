@@ -19,8 +19,8 @@
  */
 
 
-import Foundation;
-import MedKitCore;
+import Foundation
+import MedKitCore
 
 
 /**
@@ -38,7 +38,7 @@ public protocol PatientDirectory: class {
      - Parameters:
         - completion: Completion handler.
      */
-    func initialize(completionHandler completion: @escaping (Error?) -> Void);
+    func initialize(completionHandler completion: @escaping (Error?) -> Void)
     
     // MARK: - Observer Interface
     
@@ -50,7 +50,7 @@ public protocol PatientDirectory: class {
      - Parameters:
         - observer: An observer instance.
      */
-    func addObserver(_ observer: PatientDirectoryObserver);
+    func addObserver(_ observer: PatientDirectoryObserver)
     
     /**
      Remove observer.
@@ -61,7 +61,7 @@ public protocol PatientDirectory: class {
         - observer: An exisitng observer to be removed from the directory
      instance.
      */
-    func removeObserver(_ observer: PatientDirectoryObserver);
+    func removeObserver(_ observer: PatientDirectoryObserver)
     
     // MARK: - Directory Updates
     
@@ -71,7 +71,7 @@ public protocol PatientDirectory: class {
      - Parameters:
         - patient: Patient
      */
-    func addPatient(_ patient: Patient, completionHandler completion: @escaping (Error?) -> Void);
+    func addPatient(_ patient: Patient, completionHandler completion: @escaping (Error?) -> Void)
     
     /**
      Remove patient from directory.
@@ -79,7 +79,7 @@ public protocol PatientDirectory: class {
      - Parameters:
         - patient: Patient
      */
-    func removePatient(_ patient: Patient, completionHandler completion: @escaping (Error?) -> Void);
+    func removePatient(_ patient: Patient, completionHandler completion: @escaping (Error?) -> Void)
     
     // MARK: - Search
     
@@ -89,7 +89,7 @@ public protocol PatientDirectory: class {
      - Parameters:
         - profile: The patient profile.
      */
-    func findPatient(with profile: JSON) -> Patient;
+    func findPatient(with profile: JSON) -> Patient
     
     /**
      Find patient with identifier.
@@ -97,7 +97,7 @@ public protocol PatientDirectory: class {
      - Parameters:
         - identifier: The patient identifier.
      */
-    func findPatient(withIdentifier identifier: String, completionHandler completion: @escaping (Patient?, Error?) -> Void);
+    func findPatient(withIdentifier identifier: String, completionHandler completion: @escaping (Patient?, Error?) -> Void)
     
     /**
      Search patient directory.
@@ -106,7 +106,7 @@ public protocol PatientDirectory: class {
         - text:       Search text.
         - completion: Completion handler.
      */
-    func search(using text: String?, completionHandler completion: @escaping ([Patient]?, Error?) -> Void);
+    func search(using text: String?, completionHandler completion: @escaping ([Patient]?, Error?) -> Void)
     
 }
 

@@ -19,8 +19,8 @@
  */
 
 
-import Foundation;
-import MedKitCore;
+import Foundation
+import MedKitCore
 
 
 /**
@@ -32,18 +32,18 @@ public struct Name {
      Format enumeration.
      */
     public enum Format {
-        case FirstLast;
-        case LastFirst;
+        case firstLast
+        case lastFirst
     }
     
     // MARK: - Properties
-    public static var defaultFormat : Format = .FirstLast;
+    public static var defaultFormat : Format = .firstLast
     
-    public var first     : String?;
-    public var last      : String?;
+    public var first     : String?
+    public var last      : String?
     
-    public var formatted : String { return format(); }
-    public var profile   : JSON   { return getProfile(); }
+    public var formatted : String { return format() }
+    public var profile   : JSON   { return getProfile() }
     
     // MARK: - Initializers
     
@@ -59,8 +59,8 @@ public struct Name {
      */
     public init(from profile: JSON)
     {
-        first = profile[KeyFirst].string;
-        last  = profile[KeyLast].string;
+        first = profile[KeyFirst].string
+        last  = profile[KeyLast].string
     }
     
     // MARK: - Formatting
@@ -68,22 +68,22 @@ public struct Name {
     public func format(format: Format = Name.defaultFormat) -> String
     {
         switch format {
-        case .FirstLast :
-            return "\(first ?? "-") \(last ?? "-")";
+        case .firstLast :
+            return "\(first ?? "-") \(last ?? "-")"
             
-        case .LastFirst :
-            return "\(last ?? "-"), \(first ?? "-")";
+        case .lastFirst :
+            return "\(last ?? "-"), \(first ?? "-")"
         }
     }
     
     private func getProfile() -> JSON
     {
-        let profile = JSON();
+        let profile = JSON()
 
-        profile[KeyFirst] = first;
-        profile[KeyLast]  = last;
+        profile[KeyFirst] = first
+        profile[KeyLast]  = last
         
-        return profile;
+        return profile
     }
 }
 
