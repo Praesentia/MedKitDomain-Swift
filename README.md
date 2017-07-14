@@ -1,12 +1,14 @@
 
+# MedKit Domain
+
 ## Synopsis
 
 MedKit is an open source framework facilitating secure, bi-directional
 communication with medical devices.
 
 MedKitDomain is one of a number of MedKit modules which include: MedKit,
-MedKitCore, MedKitMIP and MedKitSecurity.  MedKitDomain augments MedKitCore
-with support for enterprise level administrative domains.
+MedKitCore, MedKitMIP, MedKitSecurity and SecurityKit.  MedKitDomain augments
+MedKitCore with support for enterprise level administrative domains.
 
 MedKitDomain currently provides rudimentary support for account management and
 patient directories.
@@ -14,9 +16,22 @@ patient directories.
 MedKitDomain is not an Electronic Health Record (EHR) system.  Although, an EHR
 may implement the MedKitDomain interface.
 
+## Prerequisites
+
+### iOS
+
+* iOS 10.3 or higher
+* Xcode 9.0 beta 2 (9M137d) or higher
+
+### macOS
+
+* macOS 10.12 or higher
+* Xcode 9.0 beta 2 (9M137d) or higher
+
 ## Dependencies
 
 * MedKitCore
+* SecurityKit
 
 ## Installation
 

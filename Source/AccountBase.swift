@@ -21,6 +21,7 @@
 
 import Foundation
 import MedKitCore
+import SecurityKit
 
 
 /**
@@ -53,10 +54,12 @@ public class AccountBase: Account, AccountBackend {
     /**
      Initialize instance from profile.
      */
-    public init(from profile: JSON)
+    public init(from profile: Any)
     {
-        description = profile[KeyDescription].string
-        identity    = Identity(from: profile[KeyIdentity])
+        let profile = profile as! [String : Any]
+        
+        description = profile[KeyDescription] as! String
+        identity    = Identity(from: profile[KeyIdentity]!)
     }
     
     /**
