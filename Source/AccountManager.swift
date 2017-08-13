@@ -68,7 +68,7 @@ public protocol AccountManager {
     /**
      Update primary account.
      */
-    func updatePrimary(_ account: Account?)
+    func updatePrimary(_ account: Account?, completionHandler completion: @escaping (Error?) -> Void)
     
 }
 

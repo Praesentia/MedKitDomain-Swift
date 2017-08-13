@@ -84,7 +84,9 @@ public class AccountManagerMain: AccountManager, AccountManagerBackend {
         backend.accountManager(self, addAccountWith: identity, description: description, secret: secret) { account, error in
             if error == nil, let account = account {
                 self.observers.withEach { $0.accountManager(self, didAdd: account) }
-                self.updatePrimary(account)
+                self.updatePrimary(account) { error in
+                    
+                }
             }
             completion(account, error)
         }
@@ -100,7 +102,9 @@ public class AccountManagerMain: AccountManager, AccountManagerBackend {
                 if error == nil {
                     self.observers.withEach { $0.accountManager(self, didRemove: account) }
                     if account === self.primary {
-                        self.updatePrimary(nil)
+                        self.updatePrimary(nil) { error in
+                            
+                        }
                     }
                 }
                 completion(error)
@@ -111,10 +115,14 @@ public class AccountManagerMain: AccountManager, AccountManagerBackend {
     /**
      Update primary account.
      */
-    public func updatePrimary(_ account: Account?)
+    public func updatePrimary(_ account: Account?, completionHandler completion: @escaping (Error?) -> Void)
     {
-        backend.accountManager(self, updatePrimary: account)
-        observers.withEach { $0.accountManagerDidUpdatePrimary(self) }
+        backend.accountManager(self, updatePrimary: account) { error in
+            if error == nil {
+                self.observers.withEach { $0.accountManagerDidUpdatePrimary(self) }
+            }
+            completion(error)
+        }
     }
     
 }

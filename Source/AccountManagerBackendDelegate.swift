@@ -36,7 +36,7 @@ public protocol AccountManagerBackendDelegate: class {
     func accountManager(_ manager: AccountManagerBackend, addAccountWith identity: Identity, description: String?, secret: [UInt8], completionHandler completion: @escaping (Account?, Error?) -> Void)
     func accountManager(_ manager: AccountManagerBackend, removeAccountWith identity: Identity, completionHandler completion: @escaping (Error?) -> Void)
     
-    func accountManager(_ manager: AccountManagerBackend, updatePrimary account: Account?)
+    func accountManager(_ manager: AccountManagerBackend, updatePrimary account: Account?, completionHandler completion: @escaping (Error?) -> Void)
     
 }
 

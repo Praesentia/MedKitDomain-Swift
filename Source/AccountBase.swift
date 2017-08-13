@@ -32,8 +32,8 @@ import SecurityKit
  */
 public class AccountBase: Account, AccountBackend {
     
-    public var description : String?
-    public let identity    : Identity
+    public var description           : String?
+    public let identity              : Identity
     
     // backend
     public var backend : AccountBackendDelegate!
@@ -58,7 +58,7 @@ public class AccountBase: Account, AccountBackend {
     {
         let profile = profile as! [String : Any]
         
-        description = profile[KeyDescription] as! String
+        description = profile[KeyDescription] as? String
         identity    = Identity(from: profile[KeyIdentity]!)
     }
     
