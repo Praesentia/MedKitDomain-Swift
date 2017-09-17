@@ -7,7 +7,7 @@ MedKit is an open source framework facilitating secure, bi-directional
 communication with medical devices.
 
 MedKitDomain is one of a number of MedKit modules which include: MedKit,
-MedKitCore, MedKitMIP, MedKitSecurity and SecurityKit.  MedKitDomain augments
+MedKitCore, MedKitMIP, SecurityKitAOS and SecurityKit.  MedKitDomain augments
 MedKitCore with support for enterprise level administrative domains.
 
 MedKitDomain currently provides rudimentary support for account management and
