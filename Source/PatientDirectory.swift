@@ -2,7 +2,7 @@
  -----------------------------------------------------------------------------
  This source file is part of MedKitDomain.
  
- Copyright 2016-2017 Jon Griffeth
+ Copyright 2016-2018 Jon Griffeth
  
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -89,7 +89,7 @@ public protocol PatientDirectory: class {
      - Parameters:
         - profile: The patient profile.
      */
-    func findPatient(with profile: JSON) -> Patient
+    func findPatient(with profile: PatientProfile) -> Patient
     
     /**
      Find patient with identifier.

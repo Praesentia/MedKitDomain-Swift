@@ -2,7 +2,7 @@
  -----------------------------------------------------------------------------
  This source file is part of MedKitDomain.
  
- Copyright 2017 Jon Griffeth
+ Copyright 2017-2018 Jon Griffeth
  
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -44,7 +44,7 @@ public protocol AccountBackend: class {
      
      Returns a JSON representation of the account.
      */
-    var profile: JSON { get }
+    var profile: AccountProfile { get }
     
 }
 

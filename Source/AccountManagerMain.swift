@@ -2,7 +2,7 @@
  -----------------------------------------------------------------------------
  This source file is part of MedKitDomain.
  
- Copyright 2017 Jon Griffeth
+ Copyright 2017-2018 Jon Griffeth
  
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -54,7 +54,7 @@ public class AccountManagerMain: AccountManager, AccountManagerBackend {
     {
         backend.accountManagerInitialize(self) { error in
             if error == nil {
-                self.observers.withEach { $0.accountManagerDidUpdate(self) }
+                self.observers.forEach { $0.accountManagerDidUpdate(self) }
             }
             completion(error)
         }
@@ -79,11 +79,11 @@ public class AccountManagerMain: AccountManager, AccountManagerBackend {
     /**
      Add account.
      */
-    public func addAccount(with identity: Identity, description: String?, secret: [UInt8], completionHandler completion: @escaping (Account?, Error?) -> Void)
+    public func addAccount(with identity: Identity, description: String?, secret: Data, completionHandler completion: @escaping (Account?, Error?) -> Void)
     {
         backend.accountManager(self, addAccountWith: identity, description: description, secret: secret) { account, error in
             if error == nil, let account = account {
-                self.observers.withEach { $0.accountManager(self, didAdd: account) }
+                self.observers.forEach { $0.accountManager(self, didAdd: account) }
                 self.updatePrimary(account) { error in
                     
                 }
@@ -100,7 +100,7 @@ public class AccountManagerMain: AccountManager, AccountManagerBackend {
         if let account = accounts.find(where: { $0.identity == identity }) {
             backend.accountManager(self, removeAccountWith: identity) { error in
                 if error == nil {
-                    self.observers.withEach { $0.accountManager(self, didRemove: account) }
+                    self.observers.forEach { $0.accountManager(self, didRemove: account) }
                     if account === self.primary {
                         self.updatePrimary(nil) { error in
                             
@@ -119,7 +119,7 @@ public class AccountManagerMain: AccountManager, AccountManagerBackend {
     {
         backend.accountManager(self, updatePrimary: account) { error in
             if error == nil {
-                self.observers.withEach { $0.accountManagerDidUpdatePrimary(self) }
+                self.observers.forEach { $0.accountManagerDidUpdatePrimary(self) }
             }
             completion(error)
         }

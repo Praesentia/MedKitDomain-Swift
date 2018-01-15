@@ -2,7 +2,7 @@
  -----------------------------------------------------------------------------
  This source file is part of MedKitDomain.
  
- Copyright 2017 Jon Griffeth
+ Copyright 2017-2018 Jon Griffeth
  
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -32,12 +32,12 @@ import SecurityKit
  */
 public class AccountBase: Account, AccountBackend {
     
-    public var description           : String?
-    public let identity              : Identity
+    public var description : String?
+    public let identity    : Identity
     
     // backend
     public var backend : AccountBackendDelegate!
-    public var profile : JSON { return getProfile() }
+    public var profile : AccountProfile { return AccountProfile(for: self) }
     
     // MARK: - Private
     private var observers = ObserverManager<AccountObserver>()
@@ -54,12 +54,10 @@ public class AccountBase: Account, AccountBackend {
     /**
      Initialize instance from profile.
      */
-    public init(from profile: Any)
+    public init(from profile: AccountProfile)
     {
-        let profile = profile as! [String : Any]
-        
-        description = profile[KeyDescription] as? String
-        identity    = Identity(from: profile[KeyIdentity]!)
+        description = profile.description
+        identity    = profile.identity
     }
     
     /**
@@ -88,25 +86,12 @@ public class AccountBase: Account, AccountBackend {
     {
         backend.account(self, updateDescription: description) { error in
             if error == nil {
-                self.observers.withEach { $0.accountDidUpdateDescription(self) }
+                self.observers.forEach { $0.accountDidUpdateDescription(self) }
             }
             completion(error)
         }
     }
-    
-    /**
-     Get profile.
-     */
-    private func getProfile() -> JSON
-    {
-        let profile = JSON()
-        
-        profile[KeyDescription] = description
-        profile[KeyIdentity]    = identity.profile
-        
-        return profile
-    }
-    
+
 }
 
 

@@ -2,7 +2,7 @@
  -----------------------------------------------------------------------------
  This source file is part of MedKitDomain.
  
- Copyright 2016-2017 Jon Griffeth
+ Copyright 2016-2018 Jon Griffeth
  
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@
 
 
 import Foundation
+import MedKitAssignedNumbers
 import MedKitCore
 
 
@@ -45,7 +46,7 @@ public class PatientBase: Patient, PatientBackend {
     public var               backend             : PatientBackendDelegate!
     public internal(set) var devices             = [Device]() // TODO: internal
     public private(set)  var notificationEnabled = false
-    public var               profile             : JSON     { return getProfile() }
+    public var               profile             : PatientProfile { return PatientProfile(from: self) }
     
     // privte
     private let observers = ObserverManager<PatientObserver>()
@@ -68,14 +69,14 @@ public class PatientBase: Patient, PatientBackend {
      - backend:
      - object:
      */
-    init(backend: PatientBackendDelegate, from profile: JSON)
+    init(backend: PatientBackendDelegate, from profile: PatientProfile)
     {
         self.backend = backend
         
-        birthdate  = Date.rfc3339(profile["birthdate"].string!)
-        identifier = profile[KeyIdentifier].string!
-        name       = Name(from: profile["name"])
-        photo      = Image(from: profile[KeyPhoto])
+        birthdate  = profile.birthdate
+        identifier = profile.identifier
+        name       = profile.name
+        photo      = profile.photo
     }
     
     deinit
@@ -111,7 +112,7 @@ public class PatientBase: Patient, PatientBackend {
         if !devices.contains(where: { $0 === device }) {
             backend.patientAssignDevice(self, device: device) { error in
                 if error == nil {
-                    self.observers.withEach { $0.patient(self, didAdd: device) }
+                    self.observers.forEach { $0.patient(self, didAdd: device) }
                 }
                 sync.decr(error)
             }
@@ -156,7 +157,7 @@ public class PatientBase: Patient, PatientBackend {
             
             if error == nil {
                 self.name = name
-                self.observers.withEach { $0.patientDidUpdateName(self) }
+                self.observers.forEach { $0.patientDidUpdateName(self) }
             }
             
             completion(error)
@@ -175,25 +176,11 @@ public class PatientBase: Patient, PatientBackend {
             
             if error == nil {
                 self.photo = Image(data: photo.data!)
-                self.observers.withEach { $0.patientDidUpdatePhoto(self) }
+                self.observers.forEach { $0.patientDidUpdatePhoto(self) }
             }
             
             completion(error)
         }
-    }
-    
-    // MARK: - Profile
-    
-    private func getProfile() -> JSON
-    {
-        let profile = JSON()
-        
-        profile["birthdate"]  = birthdate?.rfc3339
-        profile[KeyIdentifier] = identifier
-        profile["name"]        = name.profile
-        profile[KeyPhoto]      = photo?.profile
-        
-        return profile
     }
     
     // MARK: - PatientBackend

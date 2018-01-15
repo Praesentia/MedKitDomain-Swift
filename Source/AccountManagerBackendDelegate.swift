@@ -2,7 +2,7 @@
  -----------------------------------------------------------------------------
  This source file is part of MedKitDomain.
  
- Copyright 2017 Jon Griffeth
+ Copyright 2017-2018 Jon Griffeth
  
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ public protocol AccountManagerBackendDelegate: class {
     
     func accountManagerInitialize(_ manager: AccountManagerBackend, completionHandler completion: @escaping (Error?) -> Void)
     
-    func accountManager(_ manager: AccountManagerBackend, addAccountWith identity: Identity, description: String?, secret: [UInt8], completionHandler completion: @escaping (Account?, Error?) -> Void)
+    func accountManager(_ manager: AccountManagerBackend, addAccountWith identity: Identity, description: String?, secret: Data, completionHandler completion: @escaping (Account?, Error?) -> Void)
     func accountManager(_ manager: AccountManagerBackend, removeAccountWith identity: Identity, completionHandler completion: @escaping (Error?) -> Void)
     
     func accountManager(_ manager: AccountManagerBackend, updatePrimary account: Account?, completionHandler completion: @escaping (Error?) -> Void)

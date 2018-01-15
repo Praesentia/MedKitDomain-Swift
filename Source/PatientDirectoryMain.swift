@@ -2,7 +2,7 @@
  -----------------------------------------------------------------------------
  This source file is part of MedKitDomain.
  
- Copyright 2016-2017 Jon Griffeth
+ Copyright 2016-2018 Jon Griffeth
  
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -107,7 +107,7 @@ public class PatientDirectoryMain: PatientDirectory, PatientDirectoryBackend {
      - Parameters:
         - profile: A patient profile.
      */
-    public func findPatient(with profile: JSON) -> Patient
+    public func findPatient(with profile: PatientProfile) -> Patient
     {
         return PatientCache.main.findPatient(from: profile)
     }

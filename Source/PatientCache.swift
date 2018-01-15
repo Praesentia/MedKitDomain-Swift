@@ -2,7 +2,7 @@
  -----------------------------------------------------------------------------
  This source file is part of MedKitDomain.
  
- Copyright 2016-2017 Jon Griffeth
+ Copyright 2016-2018 Jon Griffeth
  
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -48,9 +48,9 @@ public class PatientCache {
         return cache[identifier]?.patient
     }
     
-    func findPatient(from profile: JSON) -> Patient
+    func findPatient(from profile: PatientProfile) -> Patient
     {
-        let identifier = profile[KeyIdentifier].string!
+        let identifier = profile.identifier
         let patient    : PatientBase
         
         if let entry = cache[identifier] {
@@ -59,12 +59,12 @@ public class PatientCache {
         else {
             patient = PatientBase(backend: backend, from: profile)
             cache[identifier] = Entry(patient)
-            
-            if let assignedDevices = profile["devices"].array {
-                for profile in assignedDevices {
-                    patient.devices.append(DeviceProxyNetCache.main.findDevice(from: profile))
-                }
+
+            /*
+            for profile in profile.devices {
+                patient.devices.append(DeviceProxyNetCache.main.findDevice(from: profile))
             }
+            */
         }
         
         return patient

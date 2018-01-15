@@ -2,7 +2,7 @@
  -----------------------------------------------------------------------------
  This source file is part of MedKitDomain.
  
- Copyright 2016-2017 Jon Griffeth
+ Copyright 2016-2018 Jon Griffeth
  
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@
 
 
 import Foundation
+import MedKitAssignedNumbers
 import MedKitCore
 
 
@@ -34,9 +35,9 @@ public protocol Patient: class {
     var  name                : Name     { get }
     var  photo               : Image?   { get }
     
-    var  devices             : [Device] { get }
-    var  notificationEnabled : Bool     { get }
-    var  profile             : JSON     { get }
+    var  devices             : [Device]       { get }
+    var  notificationEnabled : Bool           { get }
+    var  profile             : PatientProfile { get }
     
     func addObserver(_ observer: PatientObserver)
     func removeObserver(_ observer: PatientObserver)
@@ -50,7 +51,7 @@ public protocol Patient: class {
 
 public extension Patient {
     
-    public static func find(from profile: JSON) -> Patient
+    public static func find(from profile: PatientProfile) -> Patient
     {
         return PatientCache.main.findPatient(from: profile)
     }

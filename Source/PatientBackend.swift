@@ -2,7 +2,7 @@
  -----------------------------------------------------------------------------
  This source file is part of MedKitDomain.
  
- Copyright 2016-2017 Jon Griffeth
+ Copyright 2016-2018 Jon Griffeth
  
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ public protocol PatientBackend: class {
     
     // MARK: - Properties
     var  backend : PatientBackendDelegate! { get set }
-    var  profile : JSON                    { get }
+    var  profile : PatientProfile          { get }
     
     // MARK: - Device Management
     func addDevice(_ device: Device)
