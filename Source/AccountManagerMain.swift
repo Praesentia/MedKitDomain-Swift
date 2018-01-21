@@ -38,7 +38,7 @@ public class AccountManagerMain: AccountManager, AccountManagerBackend {
     public var backend  : AccountManagerBackendDelegate!
     
     // MARK: - Private
-    private var observers = ObserverManager<AccountManagerObserver>()
+    private var observers = [AccountManagerObserver]()
     
     /**
      Initialize instance.
@@ -65,7 +65,7 @@ public class AccountManagerMain: AccountManager, AccountManagerBackend {
      */
     public func addObserver(_ observer: AccountManagerObserver)
     {
-        observers.add(observer)
+        observers.append(observer)
     }
     
     /**
@@ -73,7 +73,9 @@ public class AccountManagerMain: AccountManager, AccountManagerBackend {
      */
     public func removeObserver(_ observer: AccountManagerObserver)
     {
-        observers.remove(observer)
+        if let index = observers.index(where: { $0 === observer }) {
+            observers.remove(at: index)
+        }
     }
     
     /**

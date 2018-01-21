@@ -43,10 +43,12 @@
 		22202DE71EBB509000A79644 /* PatientDirectoryShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22202DE11EBB508C00A79644 /* PatientDirectoryShared.swift */; };
 		22202EDF1EBDFC6F00A79644 /* MedKitCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CA1EE41E8831A80091CB87 /* MedKitCore.framework */; };
 		22202EE01EBDFC7A00A79644 /* MedKitCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CA1EE01E8831A80091CB87 /* MedKitCore.framework */; };
-		2244CCFA1FB8EC7100216EB6 /* PatientInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2244CCF91FB8EC7100216EB6 /* PatientInfo.swift */; };
-		2244CD031FB8F08A00216EB6 /* PatientInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2244CCF91FB8EC7100216EB6 /* PatientInfo.swift */; };
+		2244CCFA1FB8EC7100216EB6 /* PatientProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2244CCF91FB8EC7100216EB6 /* PatientProfile.swift */; };
+		2244CD031FB8F08A00216EB6 /* PatientProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2244CCF91FB8EC7100216EB6 /* PatientProfile.swift */; };
 		2244CD051FB8F0DF00216EB6 /* AccountProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2244CD041FB8F0DF00216EB6 /* AccountProfile.swift */; };
 		2244CD061FB8F0DF00216EB6 /* AccountProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2244CD041FB8F0DF00216EB6 /* AccountProfile.swift */; };
+		224CE4C42014E68C0097FD6B /* MedKitAssignedNumbers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224CE4B82014E64C0097FD6B /* MedKitAssignedNumbers.framework */; };
+		224CE4CD2014E6D00097FD6B /* MedKitAssignedNumbers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224CE4BA2014E64C0097FD6B /* MedKitAssignedNumbers.framework */; };
 		22B4E0C01EB60A32004B39C7 /* AccountManagerShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4E0BF1EB60A32004B39C7 /* AccountManagerShared.swift */; };
 		22B4E0C51EB60A37004B39C7 /* AccountManagerShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4E0BF1EB60A32004B39C7 /* AccountManagerShared.swift */; };
 		22CA1E7D1E882B030091CB87 /* MedKitDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CA1E741E882B030091CB87 /* MedKitDomain.framework */; };
@@ -99,6 +101,48 @@
 			proxyType = 2;
 			remoteGlobalIDString = 224641BD1F12B67800379124;
 			remoteInfo = "SecurityKit macOSTests";
+		};
+		224CE4B72014E64C0097FD6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 224CE4B22014E64B0097FD6B /* MedKitAssignedNumbers.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 223FB62D1FA614900008C944;
+			remoteInfo = "MedKitAssignedNumbers iOS";
+		};
+		224CE4B92014E64C0097FD6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 224CE4B22014E64B0097FD6B /* MedKitAssignedNumbers.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2248B4FA1FA615B300F064A7;
+			remoteInfo = "MedKitAssignedNumbers macOS";
+		};
+		224CE4C52014E69F0097FD6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22CA1ED81E8831A70091CB87 /* MedKitCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2243DC781E872BDB00A188FD;
+			remoteInfo = "MedKitCore iOS";
+		};
+		224CE4C72014E6A40097FD6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 224CE4B22014E64B0097FD6B /* MedKitAssignedNumbers.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 223FB62C1FA614900008C944;
+			remoteInfo = "MedKitAssignedNumbers iOS";
+		};
+		224CE4C92014E6AE0097FD6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22CA1ED81E8831A70091CB87 /* MedKitCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2243DC941E872BF100A188FD;
+			remoteInfo = "MedKitCore macOS";
+		};
+		224CE4CB2014E6B50097FD6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 224CE4B22014E64B0097FD6B /* MedKitAssignedNumbers.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2248B4F91FA615B300F064A7;
+			remoteInfo = "MedKitAssignedNumbers macOS";
 		};
 		22CA1E7E1E882B030091CB87 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -165,8 +209,9 @@
 		220A343E1EBF3FEE0024DF9E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		22202DE11EBB508C00A79644 /* PatientDirectoryShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatientDirectoryShared.swift; path = Source/PatientDirectoryShared.swift; sourceTree = SOURCE_ROOT; };
 		222320331F14502600E5CDC7 /* SecurityKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SecurityKit.xcodeproj; path = ../SecurityKit/SecurityKit.xcodeproj; sourceTree = "<group>"; };
-		2244CCF91FB8EC7100216EB6 /* PatientInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PatientInfo.swift; path = Source/PatientInfo.swift; sourceTree = "<group>"; };
+		2244CCF91FB8EC7100216EB6 /* PatientProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PatientProfile.swift; path = Source/PatientProfile.swift; sourceTree = "<group>"; };
 		2244CD041FB8F0DF00216EB6 /* AccountProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AccountProfile.swift; path = Source/AccountProfile.swift; sourceTree = "<group>"; };
+		224CE4B22014E64B0097FD6B /* MedKitAssignedNumbers.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MedKitAssignedNumbers.xcodeproj; path = ../MedKitAssignedNumbers/MedKitAssignedNumbers.xcodeproj; sourceTree = "<group>"; };
 		225A467A1EB37DB1004EE389 /* Release Notes.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = "Release Notes.rtf"; path = "Documentation/Release Notes.rtf"; sourceTree = SOURCE_ROOT; };
 		22B4E0BF1EB60A32004B39C7 /* AccountManagerShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountManagerShared.swift; path = Source/AccountManagerShared.swift; sourceTree = SOURCE_ROOT; };
 		22CA1E741E882B030091CB87 /* MedKitDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MedKitDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +241,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				224CE4C42014E68C0097FD6B /* MedKitAssignedNumbers.framework in Frameworks */,
 				22202EE01EBDFC7A00A79644 /* MedKitCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +258,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				224CE4CD2014E6D00097FD6B /* MedKitAssignedNumbers.framework in Frameworks */,
 				22202EDF1EBDFC6F00A79644 /* MedKitCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +314,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		224CE4B32014E64B0097FD6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				224CE4B82014E64C0097FD6B /* MedKitAssignedNumbers.framework */,
+				224CE4BA2014E64C0097FD6B /* MedKitAssignedNumbers.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		224CE4C32014E68C0097FD6B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		225A46751EB37D9F004EE389 /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +356,7 @@
 		22CA1E4B1E882ADA0091CB87 = {
 			isa = PBXGroup;
 			children = (
+				224CE4B22014E64B0097FD6B /* MedKitAssignedNumbers.xcodeproj */,
 				222320331F14502600E5CDC7 /* SecurityKit.xcodeproj */,
 				22CA1ED81E8831A70091CB87 /* MedKitCore.xcodeproj */,
 				225A46751EB37D9F004EE389 /* Documentation */,
@@ -303,6 +367,7 @@
 				22CA1E911E882B1A0091CB87 /* MedKitDomain macOS */,
 				22CA1E9C1E882B1A0091CB87 /* MedKitDomain macOSTests */,
 				22CA1E561E882ADA0091CB87 /* Products */,
+				224CE4C32014E68C0097FD6B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -369,7 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				22CA1EA91E882B990091CB87 /* Patient.swift */,
-				2244CCF91FB8EC7100216EB6 /* PatientInfo.swift */,
+				2244CCF91FB8EC7100216EB6 /* PatientProfile.swift */,
 				22092E041EACC09700F0B503 /* PatientBackend.swift */,
 				22092DFE1EACBF9400F0B503 /* PatientBackendDelegate.swift */,
 				22092E001EACBFCC00F0B503 /* PatientBase.swift */,
@@ -445,6 +510,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				224CE4C82014E6A40097FD6B /* PBXTargetDependency */,
+				224CE4C62014E69F0097FD6B /* PBXTargetDependency */,
 			);
 			name = "MedKitDomain iOS";
 			productName = "MedKitDomain iOS";
@@ -481,6 +548,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				224CE4CC2014E6B50097FD6B /* PBXTargetDependency */,
+				224CE4CA2014E6AE0097FD6B /* PBXTargetDependency */,
 			);
 			name = "MedKitDomain macOS";
 			productName = "MedKitDomain macOS";
@@ -547,6 +616,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 224CE4B32014E64B0097FD6B /* Products */;
+					ProjectRef = 224CE4B22014E64B0097FD6B /* MedKitAssignedNumbers.xcodeproj */;
+				},
+				{
 					ProductGroup = 22CA1ED91E8831A70091CB87 /* Products */;
 					ProjectRef = 22CA1ED81E8831A70091CB87 /* MedKitCore.xcodeproj */;
 				},
@@ -592,6 +665,20 @@
 			fileType = wrapper.cfbundle;
 			path = "SecurityKit macOSTests.xctest";
 			remoteRef = 222320441F14502700E5CDC7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		224CE4B82014E64C0097FD6B /* MedKitAssignedNumbers.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MedKitAssignedNumbers.framework;
+			remoteRef = 224CE4B72014E64C0097FD6B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		224CE4BA2014E64C0097FD6B /* MedKitAssignedNumbers.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MedKitAssignedNumbers.framework;
+			remoteRef = 224CE4B92014E64C0097FD6B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		22CA1EE01E8831A80091CB87 /* MedKitCore.framework */ = {
@@ -680,7 +767,7 @@
 				22D561141EA671190010415F /* AccountManager.swift in Sources */,
 				22D561131EA671190010415F /* Account.swift in Sources */,
 				22B4E0C01EB60A32004B39C7 /* AccountManagerShared.swift in Sources */,
-				2244CCFA1FB8EC7100216EB6 /* PatientInfo.swift in Sources */,
+				2244CCFA1FB8EC7100216EB6 /* PatientProfile.swift in Sources */,
 				22092E0D1EACC1A400F0B503 /* PatientDirectoryMain.swift in Sources */,
 				22092DFC1EACBF6900F0B503 /* PatientObserver.swift in Sources */,
 				22CA1EAF1E882B990091CB87 /* Patient.swift in Sources */,
@@ -722,7 +809,7 @@
 				22CA1EB51E882BB60091CB87 /* Patient.swift in Sources */,
 				22D561161EA6715B0010415F /* Account.swift in Sources */,
 				22B4E0C51EB60A37004B39C7 /* AccountManagerShared.swift in Sources */,
-				2244CD031FB8F08A00216EB6 /* PatientInfo.swift in Sources */,
+				2244CD031FB8F08A00216EB6 /* PatientProfile.swift in Sources */,
 				22092DFD1EACBF8500F0B503 /* PatientObserver.swift in Sources */,
 				22CA1EB71E882BB60091CB87 /* PatientCache.swift in Sources */,
 				22D561151EA671580010415F /* AccountManager.swift in Sources */,
@@ -743,6 +830,26 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		224CE4C62014E69F0097FD6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MedKitCore iOS";
+			targetProxy = 224CE4C52014E69F0097FD6B /* PBXContainerItemProxy */;
+		};
+		224CE4C82014E6A40097FD6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MedKitAssignedNumbers iOS";
+			targetProxy = 224CE4C72014E6A40097FD6B /* PBXContainerItemProxy */;
+		};
+		224CE4CA2014E6AE0097FD6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MedKitCore macOS";
+			targetProxy = 224CE4C92014E6AE0097FD6B /* PBXContainerItemProxy */;
+		};
+		224CE4CC2014E6B50097FD6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MedKitAssignedNumbers macOS";
+			targetProxy = 224CE4CB2014E6B50097FD6B /* PBXContainerItemProxy */;
+		};
 		22CA1E7F1E882B030091CB87 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22CA1E731E882B030091CB87 /* MedKitDomain iOS */;
@@ -786,7 +893,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 49;
+				CURRENT_PROJECT_VERSION = 50;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -847,7 +954,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 49;
+				CURRENT_PROJECT_VERSION = 50;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -876,11 +983,11 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 49;
+				CURRENT_PROJECT_VERSION = 50;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 49;
+				DYLIB_CURRENT_VERSION = 50;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "MedKitDomain iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -900,11 +1007,11 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 49;
+				CURRENT_PROJECT_VERSION = 50;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 49;
+				DYLIB_CURRENT_VERSION = 50;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "MedKitDomain iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -951,11 +1058,11 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 49;
+				CURRENT_PROJECT_VERSION = 50;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 49;
+				DYLIB_CURRENT_VERSION = 50;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "MedKitDomain macOS/Info.plist";
@@ -976,11 +1083,11 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 49;
+				CURRENT_PROJECT_VERSION = 50;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 49;
+				DYLIB_CURRENT_VERSION = 50;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "MedKitDomain macOS/Info.plist";

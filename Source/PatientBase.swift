@@ -49,7 +49,7 @@ public class PatientBase: Patient, PatientBackend {
     public var               profile             : PatientProfile { return PatientProfile(from: self) }
     
     // privte
-    private let observers = ObserverManager<PatientObserver>()
+    private var observers = [PatientObserver]()
     
     // MARK: - Initializers/Deinitializers
     
@@ -62,21 +62,39 @@ public class PatientBase: Patient, PatientBackend {
     {
         self.backend = backend
     }
-    
+
     /**
      Initialize instance from object.
+
      - Parameters:
-     - backend:
-     - object:
+         - backend:
+         - patientInfo:
      */
-    init(backend: PatientBackendDelegate, from profile: PatientProfile)
+    init(backend: PatientBackendDelegate, from patientInfo: PatientInfo)
+    {
+        self.backend = backend
+
+        birthdate  = patientInfo.birthdate
+        identifier = patientInfo.identifier
+        name       = patientInfo.name
+        photo      = patientInfo.photo
+    }
+
+    /**
+     Initialize instance from object.
+
+     - Parameters:
+         - backend:
+         - patientProfile:
+     */
+    init(backend: PatientBackendDelegate, from patientProfile: PatientProfile)
     {
         self.backend = backend
         
-        birthdate  = profile.birthdate
-        identifier = profile.identifier
-        name       = profile.name
-        photo      = profile.photo
+        birthdate  = patientProfile.info.birthdate
+        identifier = patientProfile.info.identifier
+        name       = patientProfile.info.name
+        photo      = patientProfile.info.photo
     }
     
     deinit
@@ -88,12 +106,14 @@ public class PatientBase: Patient, PatientBackend {
     
     public func addObserver(_ observer: PatientObserver)
     {
-        observers.add(observer)
+        observers.append(observer)
     }
     
     public func removeObserver(_ observer: PatientObserver)
     {
-        observers.remove(observer)
+        if let index = observers.index(where: { $0 === observer }) {
+            observers.remove(at: index)
+        }
     }
     
     // MARK: Device Management

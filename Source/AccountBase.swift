@@ -40,7 +40,7 @@ public class AccountBase: Account, AccountBackend {
     public var profile : AccountProfile { return AccountProfile(for: self) }
     
     // MARK: - Private
-    private var observers = ObserverManager<AccountObserver>()
+    private var observers = [AccountObserver]()
     
     /**
      Initialize instance.
@@ -67,12 +67,14 @@ public class AccountBase: Account, AccountBackend {
      */
     public func addObserver(_ observer: AccountObserver)
     {
-        observers.add(observer)
+        observers.append(observer)
     }
     
     public func removeObserver(_ observer: AccountObserver)
     {
-        observers.remove(observer)
+        if let index = observers.index(where: { $0 === observer }) {
+            observers.remove(at: index)
+        }
     }
     
     /**

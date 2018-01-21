@@ -20,7 +20,7 @@
 
 
 import Foundation
-import MedKitCore
+import MedKitAssignedNumbers
 
 
 /**
@@ -48,16 +48,16 @@ public class PatientCache {
         return cache[identifier]?.patient
     }
     
-    func findPatient(from profile: PatientProfile) -> Patient
+    func findPatient(with patientInfo: PatientInfo) -> Patient
     {
-        let identifier = profile.identifier
+        let identifier = patientInfo.identifier
         let patient    : PatientBase
         
         if let entry = cache[identifier] {
             patient = entry.patient
         }
         else {
-            patient = PatientBase(backend: backend, from: profile)
+            patient = PatientBase(backend: backend, from: patientInfo)
             cache[identifier] = Entry(patient)
 
             /*

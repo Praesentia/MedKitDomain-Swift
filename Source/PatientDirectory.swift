@@ -20,7 +20,7 @@
 
 
 import Foundation
-import MedKitCore
+import MedKitAssignedNumbers
 
 
 /**
@@ -89,7 +89,7 @@ public protocol PatientDirectory: class {
      - Parameters:
         - profile: The patient profile.
      */
-    func findPatient(with profile: PatientProfile) -> Patient
+    func findPatient(with patientInfo: PatientInfoV1) -> Patient
     
     /**
      Find patient with identifier.

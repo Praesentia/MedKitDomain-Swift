@@ -20,7 +20,7 @@
 
 
 import Foundation
-import MedKitCore
+import MedKitAssignedNumbers
 
 
 /**
@@ -37,7 +37,7 @@ public class PatientDirectoryMain: PatientDirectory, PatientDirectoryBackend {
     public var backend : PatientDirectoryBackendDelegate! = DefaultBackend.main
     
     // MARK: - Private
-    private let observers = ObserverManager<PatientDirectoryObserver>()
+    private var observers = [PatientDirectoryObserver]()
     
     /**
      Initialize instance.
@@ -67,12 +67,14 @@ public class PatientDirectoryMain: PatientDirectory, PatientDirectoryBackend {
      */
     public func addObserver(_ observer: PatientDirectoryObserver)
     {
-        observers.add(observer)
+        observers.append(observer)
     }
     
     public func removeObserver(_ observer: PatientDirectoryObserver)
     {
-        observers.remove(observer)
+        if let index = observers.index(where: { $0 === observer }) {
+            observers.remove(at: index)
+        }
     }
     
     // MARK: - Updates
@@ -107,9 +109,9 @@ public class PatientDirectoryMain: PatientDirectory, PatientDirectoryBackend {
      - Parameters:
         - profile: A patient profile.
      */
-    public func findPatient(with profile: PatientProfile) -> Patient
+    public func findPatient(with patientInfo: PatientInfoV1) -> Patient
     {
-        return PatientCache.main.findPatient(from: profile)
+        return PatientCache.main.findPatient(with: patientInfo)
     }
     
     /**

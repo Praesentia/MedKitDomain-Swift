@@ -24,6 +24,10 @@ import MedKitAssignedNumbers
 import MedKitCore
 
 
+public typealias Name  = NameV1
+public typealias Image = ImageV1
+
+
 /**
  Patient protocol.
  */
@@ -53,7 +57,7 @@ public extension Patient {
     
     public static func find(from profile: PatientProfile) -> Patient
     {
-        return PatientCache.main.findPatient(from: profile)
+        return PatientCache.main.findPatient(with: profile.info)
     }
     
 }
