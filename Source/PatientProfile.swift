@@ -26,28 +26,6 @@ import MedKitAssignedNumbers
 public typealias PatientProfile = PatientProfileV1
 public typealias PatientInfo    = PatientProfileV1.PatientInfo
 
-public extension PatientInfoV1 {
-
-    public init(from patient: Patient)
-    {
-        birthdate  = patient.birthdate
-        identifier = patient.identifier
-        name       = patient.name
-        photo      = patient.photo
-    }
-
-}
-
-public extension PatientProfileV1 {
-
-    public init(from patient: Patient)
-    {
-        info    = PatientInfo(from: patient)
-        devices = []
-    }
-
-}
-
 
 // End of File
 

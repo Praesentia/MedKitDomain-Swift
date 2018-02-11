@@ -41,21 +41,21 @@
 		22092E121EACDAFA00F0B503 /* PatientDirectoryObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22092E101EACC1F800F0B503 /* PatientDirectoryObserver.swift */; };
 		22202DE21EBB508C00A79644 /* PatientDirectoryShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22202DE11EBB508C00A79644 /* PatientDirectoryShared.swift */; };
 		22202DE71EBB509000A79644 /* PatientDirectoryShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22202DE11EBB508C00A79644 /* PatientDirectoryShared.swift */; };
-		22202EDF1EBDFC6F00A79644 /* MedKitCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CA1EE41E8831A80091CB87 /* MedKitCore.framework */; };
-		22202EE01EBDFC7A00A79644 /* MedKitCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CA1EE01E8831A80091CB87 /* MedKitCore.framework */; };
+		222F4EFC202E2C2F00D79F84 /* PatientInfoV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222F4EFB202E2C2F00D79F84 /* PatientInfoV1.swift */; };
+		222F4EFD202E2C2F00D79F84 /* PatientInfoV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222F4EFB202E2C2F00D79F84 /* PatientInfoV1.swift */; };
+		222F4EFF202E2C5E00D79F84 /* PatientProfileV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222F4EFE202E2C5E00D79F84 /* PatientProfileV1.swift */; };
+		222F4F00202E2C5E00D79F84 /* PatientProfileV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222F4EFE202E2C5E00D79F84 /* PatientProfileV1.swift */; };
 		2244CCFA1FB8EC7100216EB6 /* PatientProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2244CCF91FB8EC7100216EB6 /* PatientProfile.swift */; };
 		2244CD031FB8F08A00216EB6 /* PatientProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2244CCF91FB8EC7100216EB6 /* PatientProfile.swift */; };
 		2244CD051FB8F0DF00216EB6 /* AccountProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2244CD041FB8F0DF00216EB6 /* AccountProfile.swift */; };
 		2244CD061FB8F0DF00216EB6 /* AccountProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2244CD041FB8F0DF00216EB6 /* AccountProfile.swift */; };
-		224CE4C42014E68C0097FD6B /* MedKitAssignedNumbers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224CE4B82014E64C0097FD6B /* MedKitAssignedNumbers.framework */; };
-		224CE4CD2014E6D00097FD6B /* MedKitAssignedNumbers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224CE4BA2014E64C0097FD6B /* MedKitAssignedNumbers.framework */; };
 		22B4E0C01EB60A32004B39C7 /* AccountManagerShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4E0BF1EB60A32004B39C7 /* AccountManagerShared.swift */; };
 		22B4E0C51EB60A37004B39C7 /* AccountManagerShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4E0BF1EB60A32004B39C7 /* AccountManagerShared.swift */; };
+		22BD2F4A202756ED009F6A9F /* PatientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD2F49202756ED009F6A9F /* PatientTests.swift */; };
+		22BD2F4B202756ED009F6A9F /* PatientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD2F49202756ED009F6A9F /* PatientTests.swift */; };
 		22CA1E7D1E882B030091CB87 /* MedKitDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CA1E741E882B030091CB87 /* MedKitDomain.framework */; };
-		22CA1E821E882B030091CB87 /* MedKitDomain_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CA1E811E882B030091CB87 /* MedKitDomain_iOSTests.swift */; };
 		22CA1E841E882B030091CB87 /* MedKitDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA1E761E882B030091CB87 /* MedKitDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22CA1E991E882B1A0091CB87 /* MedKitDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CA1E901E882B1A0091CB87 /* MedKitDomain.framework */; };
-		22CA1E9E1E882B1A0091CB87 /* MedKitDomain_macOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CA1E9D1E882B1A0091CB87 /* MedKitDomain_macOSTests.swift */; };
 		22CA1EA01E882B1A0091CB87 /* MedKitDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA1E921E882B1A0091CB87 /* MedKitDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22CA1EAF1E882B990091CB87 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CA1EA91E882B990091CB87 /* Patient.swift */; };
 		22CA1EB11E882B990091CB87 /* PatientCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CA1EAB1E882B990091CB87 /* PatientCache.swift */; };
@@ -144,6 +144,34 @@
 			remoteGlobalIDString = 2248B4F91FA615B300F064A7;
 			remoteInfo = "MedKitAssignedNumbers macOS";
 		};
+		22BD2F3F20275614009F6A9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 224CE4B22014E64B0097FD6B /* MedKitAssignedNumbers.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 22BD2F1C20274E2D009F6A9F;
+			remoteInfo = "MedKitAssignedNumbers iOSTests";
+		};
+		22BD2F4120275614009F6A9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 224CE4B22014E64B0097FD6B /* MedKitAssignedNumbers.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 22BD2F2D20274E4D009F6A9F;
+			remoteInfo = "MedKitAssignedNumbers macOSTests";
+		};
+		22BD2F4C2027996A009F6A9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 222320331F14502600E5CDC7 /* SecurityKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2246417E1F12B46D00379124;
+			remoteInfo = "SecurityKit iOS";
+		};
+		22BD2F4E20279971009F6A9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 222320331F14502600E5CDC7 /* SecurityKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 224641B41F12B67800379124;
+			remoteInfo = "SecurityKit macOS";
+		};
 		22CA1E7E1E882B030091CB87 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 22CA1E4C1E882ADA0091CB87 /* Project object */;
@@ -209,22 +237,23 @@
 		220A343E1EBF3FEE0024DF9E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		22202DE11EBB508C00A79644 /* PatientDirectoryShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatientDirectoryShared.swift; path = Source/PatientDirectoryShared.swift; sourceTree = SOURCE_ROOT; };
 		222320331F14502600E5CDC7 /* SecurityKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SecurityKit.xcodeproj; path = ../SecurityKit/SecurityKit.xcodeproj; sourceTree = "<group>"; };
+		222F4EFB202E2C2F00D79F84 /* PatientInfoV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientInfoV1.swift; sourceTree = "<group>"; };
+		222F4EFE202E2C5E00D79F84 /* PatientProfileV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientProfileV1.swift; sourceTree = "<group>"; };
 		2244CCF91FB8EC7100216EB6 /* PatientProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PatientProfile.swift; path = Source/PatientProfile.swift; sourceTree = "<group>"; };
 		2244CD041FB8F0DF00216EB6 /* AccountProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AccountProfile.swift; path = Source/AccountProfile.swift; sourceTree = "<group>"; };
 		224CE4B22014E64B0097FD6B /* MedKitAssignedNumbers.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MedKitAssignedNumbers.xcodeproj; path = ../MedKitAssignedNumbers/MedKitAssignedNumbers.xcodeproj; sourceTree = "<group>"; };
 		225A467A1EB37DB1004EE389 /* Release Notes.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = "Release Notes.rtf"; path = "Documentation/Release Notes.rtf"; sourceTree = SOURCE_ROOT; };
 		22B4E0BF1EB60A32004B39C7 /* AccountManagerShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountManagerShared.swift; path = Source/AccountManagerShared.swift; sourceTree = SOURCE_ROOT; };
+		22BD2F49202756ED009F6A9F /* PatientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientTests.swift; sourceTree = "<group>"; };
 		22CA1E741E882B030091CB87 /* MedKitDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MedKitDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CA1E761E882B030091CB87 /* MedKitDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MedKitDomain.h; sourceTree = "<group>"; };
 		22CA1E771E882B030091CB87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22CA1E7C1E882B030091CB87 /* MedKitDomain iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MedKitDomain iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		22CA1E811E882B030091CB87 /* MedKitDomain_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedKitDomain_iOSTests.swift; sourceTree = "<group>"; };
 		22CA1E831E882B030091CB87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22CA1E901E882B1A0091CB87 /* MedKitDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MedKitDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CA1E921E882B1A0091CB87 /* MedKitDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MedKitDomain.h; sourceTree = "<group>"; };
 		22CA1E931E882B1A0091CB87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22CA1E981E882B1A0091CB87 /* MedKitDomain macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MedKitDomain macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		22CA1E9D1E882B1A0091CB87 /* MedKitDomain_macOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedKitDomain_macOSTests.swift; sourceTree = "<group>"; };
 		22CA1E9F1E882B1A0091CB87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22CA1EA91E882B990091CB87 /* Patient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Patient.swift; path = Source/Patient.swift; sourceTree = SOURCE_ROOT; };
 		22CA1EAB1E882B990091CB87 /* PatientCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatientCache.swift; path = Source/PatientCache.swift; sourceTree = SOURCE_ROOT; };
@@ -241,8 +270,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				224CE4C42014E68C0097FD6B /* MedKitAssignedNumbers.framework in Frameworks */,
-				22202EE01EBDFC7A00A79644 /* MedKitCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +285,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				224CE4CD2014E6D00097FD6B /* MedKitAssignedNumbers.framework in Frameworks */,
-				22202EDF1EBDFC6F00A79644 /* MedKitCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,9 +315,10 @@
 		221903AE1EC754580043BE70 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				222F4EF9202E244300D79F84 /* Patient */,
 				22FF29F61F68025500E0FE8A /* Extensions */,
 			);
-			name = Tests;
+			path = Tests;
 			sourceTree = SOURCE_ROOT;
 		};
 		22202DE81EBBC6E800A79644 /* Backend */ = {
@@ -307,11 +333,28 @@
 			isa = PBXGroup;
 			children = (
 				2223203F1F14502700E5CDC7 /* SecurityKit.framework */,
-				222320411F14502700E5CDC7 /* SecurityKit iOSTests.xctest */,
 				222320431F14502700E5CDC7 /* SecurityKit.framework */,
+				222320411F14502700E5CDC7 /* SecurityKit iOSTests.xctest */,
 				222320451F14502700E5CDC7 /* SecurityKit macOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		222F4EF9202E244300D79F84 /* Patient */ = {
+			isa = PBXGroup;
+			children = (
+				22BD2F49202756ED009F6A9F /* PatientTests.swift */,
+			);
+			name = Patient;
+			sourceTree = "<group>";
+		};
+		222F4EFA202E2C1200D79F84 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				222F4EFB202E2C2F00D79F84 /* PatientInfoV1.swift */,
+				222F4EFE202E2C5E00D79F84 /* PatientProfileV1.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		224CE4B32014E64B0097FD6B /* Products */ = {
@@ -319,6 +362,8 @@
 			children = (
 				224CE4B82014E64C0097FD6B /* MedKitAssignedNumbers.framework */,
 				224CE4BA2014E64C0097FD6B /* MedKitAssignedNumbers.framework */,
+				22BD2F4020275614009F6A9F /* MedKitAssignedNumbers iOSTests.xctest */,
+				22BD2F4220275614009F6A9F /* MedKitAssignedNumbers macOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -394,7 +439,6 @@
 		22CA1E801E882B030091CB87 /* MedKitDomain iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				22CA1E811E882B030091CB87 /* MedKitDomain_iOSTests.swift */,
 				22CA1E831E882B030091CB87 /* Info.plist */,
 			);
 			path = "MedKitDomain iOSTests";
@@ -412,7 +456,6 @@
 		22CA1E9C1E882B1A0091CB87 /* MedKitDomain macOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				22CA1E9D1E882B1A0091CB87 /* MedKitDomain_macOSTests.swift */,
 				22CA1E9F1E882B1A0091CB87 /* Info.plist */,
 			);
 			path = "MedKitDomain macOSTests";
@@ -426,6 +469,7 @@
 				22CA1EB41E882B9F0091CB87 /* Patient */,
 				22B1448F1E8947DF005A35B9 /* Patient Directory */,
 				22202DE81EBBC6E800A79644 /* Backend */,
+				222F4EFA202E2C1200D79F84 /* Extensions */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -448,8 +492,8 @@
 			isa = PBXGroup;
 			children = (
 				22CA1EE01E8831A80091CB87 /* MedKitCore.framework */,
-				22CA1EE21E8831A80091CB87 /* MedKitCore iOSTests.xctest */,
 				22CA1EE41E8831A80091CB87 /* MedKitCore.framework */,
+				22CA1EE21E8831A80091CB87 /* MedKitCore iOSTests.xctest */,
 				22CA1EE61E8831A80091CB87 /* MedKitCore macOSTests.xctest */,
 			);
 			name = Products;
@@ -510,6 +554,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				22BD2F4D2027996A009F6A9F /* PBXTargetDependency */,
 				224CE4C82014E6A40097FD6B /* PBXTargetDependency */,
 				224CE4C62014E69F0097FD6B /* PBXTargetDependency */,
 			);
@@ -548,6 +593,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				22BD2F4F20279971009F6A9F /* PBXTargetDependency */,
 				224CE4CC2014E6B50097FD6B /* PBXTargetDependency */,
 				224CE4CA2014E6AE0097FD6B /* PBXTargetDependency */,
 			);
@@ -581,7 +627,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Jon Griffeth";
 				TargetAttributes = {
 					22CA1E731E882B030091CB87 = {
@@ -591,6 +637,7 @@
 					};
 					22CA1E7B1E882B030091CB87 = {
 						CreatedOnToolsVersion = 8.3;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					22CA1E8F1E882B1A0091CB87 = {
@@ -600,6 +647,7 @@
 					};
 					22CA1E971E882B1A0091CB87 = {
 						CreatedOnToolsVersion = 8.3;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -631,8 +679,8 @@
 			projectRoot = "";
 			targets = (
 				22CA1E731E882B030091CB87 /* MedKitDomain iOS */,
-				22CA1E7B1E882B030091CB87 /* MedKitDomain iOSTests */,
 				22CA1E8F1E882B1A0091CB87 /* MedKitDomain macOS */,
+				22CA1E7B1E882B030091CB87 /* MedKitDomain iOSTests */,
 				22CA1E971E882B1A0091CB87 /* MedKitDomain macOSTests */,
 			);
 		};
@@ -679,6 +727,20 @@
 			fileType = wrapper.framework;
 			path = MedKitAssignedNumbers.framework;
 			remoteRef = 224CE4B92014E64C0097FD6B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		22BD2F4020275614009F6A9F /* MedKitAssignedNumbers iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "MedKitAssignedNumbers iOSTests.xctest";
+			remoteRef = 22BD2F3F20275614009F6A9F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		22BD2F4220275614009F6A9F /* MedKitAssignedNumbers macOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "MedKitAssignedNumbers macOSTests.xctest";
+			remoteRef = 22BD2F4120275614009F6A9F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		22CA1EE01E8831A80091CB87 /* MedKitCore.framework */ = {
@@ -758,8 +820,10 @@
 				22092E111EACC1F800F0B503 /* PatientDirectoryObserver.swift in Sources */,
 				22092DE61EACBB0200F0B503 /* AccountBackend.swift in Sources */,
 				22092DF41EACBE8800F0B503 /* AccountManagerBackend.swift in Sources */,
+				222F4EFC202E2C2F00D79F84 /* PatientInfoV1.swift in Sources */,
 				22092E051EACC09700F0B503 /* PatientBackend.swift in Sources */,
 				22CA1EB31E882B990091CB87 /* PatientDirectory.swift in Sources */,
+				222F4EFF202E2C5E00D79F84 /* PatientProfileV1.swift in Sources */,
 				22092DFF1EACBF9400F0B503 /* PatientBackendDelegate.swift in Sources */,
 				22202DE21EBB508C00A79644 /* PatientDirectoryShared.swift in Sources */,
 				22092DEA1EACBB6B00F0B503 /* AccountBase.swift in Sources */,
@@ -780,8 +844,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22CA1E821E882B030091CB87 /* MedKitDomain_iOSTests.swift in Sources */,
 				22FF2A001F68027200E0FE8A /* Bundle.swift in Sources */,
+				22BD2F4A202756ED009F6A9F /* PatientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -800,8 +864,10 @@
 				22092E021EACC07300F0B503 /* PatientBackendDelegate.swift in Sources */,
 				22092DEB1EACBD9F00F0B503 /* AccountBase.swift in Sources */,
 				22CA1EB91E882BB60091CB87 /* PatientDirectory.swift in Sources */,
+				222F4EFD202E2C2F00D79F84 /* PatientInfoV1.swift in Sources */,
 				22092DE41EACBACA00F0B503 /* AccountObserver.swift in Sources */,
 				22092E061EACC0D500F0B503 /* PatientBackend.swift in Sources */,
+				222F4F00202E2C5E00D79F84 /* PatientProfileV1.swift in Sources */,
 				22092DED1EACBDA800F0B503 /* AccountBackend.swift in Sources */,
 				22202DE71EBB509000A79644 /* PatientDirectoryShared.swift in Sources */,
 				22092DF71EACBEAD00F0B503 /* AccountManagerObserver.swift in Sources */,
@@ -822,8 +888,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22CA1E9E1E882B1A0091CB87 /* MedKitDomain_macOSTests.swift in Sources */,
 				22FF2A011F68027200E0FE8A /* Bundle.swift in Sources */,
+				22BD2F4B202756ED009F6A9F /* PatientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -849,6 +915,16 @@
 			isa = PBXTargetDependency;
 			name = "MedKitAssignedNumbers macOS";
 			targetProxy = 224CE4CB2014E6B50097FD6B /* PBXContainerItemProxy */;
+		};
+		22BD2F4D2027996A009F6A9F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SecurityKit iOS";
+			targetProxy = 22BD2F4C2027996A009F6A9F /* PBXContainerItemProxy */;
+		};
+		22BD2F4F20279971009F6A9F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SecurityKit macOS";
+			targetProxy = 22BD2F4E20279971009F6A9F /* PBXContainerItemProxy */;
 		};
 		22CA1E7F1E882B030091CB87 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -877,6 +953,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -884,6 +961,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -893,7 +971,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 52;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -938,6 +1016,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -945,6 +1024,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -954,7 +1034,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 52;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -969,6 +1049,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -983,11 +1064,11 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 52;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 50;
+				DYLIB_CURRENT_VERSION = 52;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "MedKitDomain iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -997,7 +1078,7 @@
 				PRODUCT_NAME = MedKitDomain;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -1007,11 +1088,11 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 52;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 50;
+				DYLIB_CURRENT_VERSION = 52;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "MedKitDomain iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1020,7 +1101,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Private.MedKitDomain;
 				PRODUCT_NAME = MedKitDomain;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -1034,8 +1115,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Private.MedKitDomain-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1048,21 +1129,21 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Private.MedKitDomain-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
 		22CA1EA21E882B1A0091CB87 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 52;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 50;
+				DYLIB_CURRENT_VERSION = 52;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "MedKitDomain macOS/Info.plist";
@@ -1073,7 +1154,7 @@
 				PRODUCT_NAME = MedKitDomain;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -1083,11 +1164,11 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 50;
+				CURRENT_PROJECT_VERSION = 52;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 50;
+				DYLIB_CURRENT_VERSION = 52;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "MedKitDomain macOS/Info.plist";
@@ -1098,7 +1179,7 @@
 				PRODUCT_NAME = MedKitDomain;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -1116,8 +1197,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Private.MedKitDomain-macOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1134,8 +1215,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Private.MedKitDomain-macOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
